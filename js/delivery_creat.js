@@ -559,7 +559,6 @@ methodFunction.showDialog = function(ele,drag){
         ele.addClass("none");
         $("#build-gdt-mask").hide();
     });
-
 };
 methodFunction.showBehavior = function(){
     var targetObj = {"deliveryDate":$("#sdate-edateItemsWrap .datechoose .checkline .checkbox-imitate"),"deliveryTime":$("#alltimeItemsWrap .mg-r35"),"deliveryPlan":$("#campaignidItemsWrap").next(),"changeJqgrid":$("#sitesetItemsWrap .mg-r35")};
