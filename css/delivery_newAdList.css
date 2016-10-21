@@ -1,0 +1,23 @@
+.ui-jqgrid-labels{font:400 14px/16px "微软雅黑"!important}#main{font:400 14px/16px "微软雅黑"!important}#grid-table .jqgrow:nth-child(2n){background:#fff!important}#grid-table .jqgrow:nth-child(2n+1){background:#fafafa!important}.ui-jqgrid-bdiv{height:auto!important}
+#container-newAdList{
+    position: absolute;
+    width:100%;
+    height:98%;
+    top:0;
+    left:0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px;
+}
+.showchart{
+    margin:0 !important;
+}
+.effects .ad-detail .img-txt .info .item{
+    width: 60px !important;
+    padding-right:  0 !important;
+}
+.effects{
+    margin-top:10px;
+}

@@ -1,0 +1,486 @@
+.status-btn{width:40px;height:18px;line-height:18px;color:#fff;background-color:#C4C4C4;border-radius:10px;position:relative;cursor:pointer}.status-btn .status-btn-circle{position:absolute;top:-3px;width:22px;height:22px;border:2px solid #C4C4C4;background-color:#fff;border-radius:20px;-moz-transition:left .3s ease-in;-webkit-transition:left .3s ease-in;-o-transition:left .3s ease-in;-ms-transition:left .3s ease-in;transition:left .3s ease-out}.status-btn-open{background-color:#3C8DBC}.status-btn-open .status-btn-info{text-align:left;padding-left:6px}.status-btn .status-btn-info{display:block;padding-right:6px;word-wrap:break-word;font-size:12px;font-family:Arial,Simson}.status-btn{line-height:18px;color:#fff;cursor:pointer}.status-btn-open .status-btn-circle{left:20px;border-color:#3C8DBC}#grid-table{font-size:11px}#grid-table .jqgrow:nth-child(2n){background:#fff}#grid-table .jqgrow:nth-child(2n+1){background:#fafafa}#grid-table [aria-describedby=grid-table_id]{color:#2B7ED1}.ui-jqgrid-bdiv{height:auto!important}.creat-data{border-bottom:0 solid #fff!important}
+#main .ui-jqgrid-bdiv{
+    height:70vh !important;
+}
+#ad-details-info  .ui-jqgrid-bdiv{
+    height:auto !important;
+}
+#ad-details-info{
+
+    background:rgba(255,255,255,1);
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+    justify-content:center;
+}
+#ad-details-info .main {
+    height:auto;
+}
+#ad-details-info ._orderdetail h3{
+    font-weight: 700;
+}
+#gbox_delivery_ad_table0 .ui-jqgrid-bdiv {
+    height: 150px !important;
+}
+#ad-details-info ._orderdetail {
+    width: auto;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    /*height:47vh;*/
+}
+#ad-details-info ._orderdetail .ad-detail{
+    width:35%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+#ad-details-info ._orderdetail .detail-chart{
+    width:60%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+#ad-details-info ._orderdetail .ad-detail .imgms{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+}
+#ad-details-info ._orderdetail .ad-detail .imgms .piclist{
+    width:50%;
+}
+#ad-details-info ._orderdetail .ad-detail .imgms .img-txt{
+    width:50%;
+}
+.clear:after{
+    zoom: 1;
+    content: "";
+    display: block;
+    height: 0;
+    line-height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.expand_center {
+    background: #F2F3F4;
+    padding:10px 10px;
+}
+.expand_center-left{
+    width: 522px;
+    float: left;
+    margin-right: 15px;
+}
+.expand_center-left .expand_center-leftTitle{
+    font-size: 14px;
+    height: 48px;
+    line-height: 48px;
+    color: rgb(51, 51, 51);
+}
+.expand_center-left .expand_center-leftTitle a{
+    padding-left: 10px;
+    font-weight: normal;
+    font-size: 12px;
+}
+.expand_center-leftImg{
+    overflow: hidden;
+    background: #fff;
+    width: 522px;
+    padding: 10px;
+}
+.expand_center-leftImg .expand_center-leftImg-left{
+    position: relative;
+    width: 258px;
+    float: left;
+}
+.expand_center-leftImg .expand_center-leftImg-left .sup_conn{
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+}
+.expand_center-leftImg .expand_center-leftImg-left .img_show-container{
+    margin-left: 20px;
+    width: 220px;
+    overflow: hidden;
+    position: relative;
+}
+.expand_center-leftImg .expand_center-leftImg-left .img_show-container .img_wrapper{
+    max-width: 100%;
+    margin: 0px auto;
+}
+.expand_center-leftImg .expand_center-leftImg-left .img_show-container .img_wrapper .img_viewport{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 273px;
+}
+.expand_center-leftImg .expand_center-leftImg-left .img_show-container .img_wrapper .img_viewport .img_viewport-conn{
+    width: 515%;
+    position: relative;
+}
+.expand_center-leftImg .expand_center-leftImg-left .img_show-container .img_wrapper .img_viewport .img_viewport-conn .img_viewport-connItem{
+    width: 220px;
+    float: left;
+    list-style: none;
+    position: relative;
+    margin-right: 10px;
+    margin-left: 0;
+    line-height: 21px;
+    height: auto;
+}
+.expand_center-leftImg .expand_center-leftImg-left .img_show-container .img_wrapper .img_viewport .img_viewport-conn .img_viewport-connItem .img_viewport-connItemTitle{
+    padding-bottom: 12px;
+    width: 220px;
+    font-size: 14px;
+    line-height: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-wrap: normal;
+    color: #999
+}
+.expand_center-leftImg .expand_center-leftImg-left .img_show-container .img_wrapper .img_viewport .img_viewport-conn .img_viewport-connItem .img_viewport-connItemCon{
+    position: relative;
+    z-index: 5;
+    display: table-cell;
+    vertical-align: middle;
+    height: 240px;
+    width: 220px;
+    border:1px solid #949494;
+    text-align: center;
+    word-break: break-all;
+    word-wrap: break-word;
+    background: #ffffff;
+}
+.expand_center-leftImg .expand_center-leftImg-left .img_show-container .img_wrapper .img_viewport .img_viewport-conn .img_viewport-connItem .img_viewport-connItemCon .img_viewport-connItemConM{
+    max-height: 240px;
+    max-width: 220px;
+    overflow: hidden;
+}
+.expand_center-leftImg .expand_center-leftImg-left .img_show-container .img_wrapper .img_viewport .img_viewport-conn .img_viewport-connItem .img_viewport-connItemCon .img_viewport-connItemConM a img{
+    height: 192px;
+}
+.expand_center-leftImg .expand_center-leftImg-left .running-left{
+    position: absolute;
+    top: 158px;
+    width: 11px;
+    height: 25px;
+    line-height: 120px;
+    overflow: hidden;
+    left: 0;
+}
+.expand_center-leftImg .expand_center-leftImg-left .running-left a{
+    background-image: url("../img/gdt-toufang-tuiguang.png");
+    background-position: -26px -38px;
+    display: block;
+    height: 25px;
+    width: 11px;
+}
+.expand_center-leftImg .expand_center-leftImg-left .running-right{
+    position: absolute;
+    top: 158px;
+    width: 11px;
+    height: 25px;
+    line-height: 120px;
+    overflow: hidden;
+    right: 0;
+}
+.expand_center-leftImg .expand_center-leftImg-left .running-right a{
+    background-image: url("../img/gdt-toufang-tuiguang.png");
+    background-position: 0 -38px;
+    display: block;
+    height: 25px;
+    width: 11px;
+}
+
+
+.expand_center-leftImg .expand_center-leftImg-right{
+    float: left;
+    width: 244px;
+    margin-top: 20px
+}
+.expand_center-leftImg .expand_center-leftImg-right .right_info{
+    padding-left: 66px;
+    position: relative;
+    zoom: 1;
+    line-height: 25px;
+    color: #666;
+}
+.expand_center-leftImg .expand_center-leftImg-right .right_info .ittemm{
+    width: 66px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    font-weight: 900;
+}
+.expand_center-leftImg .expand_center-leftImg-right .right_info .icon_edi{
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+    height: 10px;
+    width: 16px;
+    position: relative;
+}
+.expand_center-leftImg .expand_center-leftImg-right .right_info .icon_edi i{
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    background-image: url("../img/gdt-toufang-global-20160802_21281.png");
+    background-position: -134px 0;
+    top: -2px;
+    cursor: pointer;
+}
+
+.expand_center-leftImg .expand_center-leftImg-right .edit_first{
+    top: 40px;
+    left: 360px;
+    width: 225px;
+    display: block;
+    position: absolute;
+    z-index: 690;
+    background: #fff;
+    border: 1px solid #dbdee1;
+    box-shadow: 3px 0 10px #B9BFC3;
+    text-align: left;
+    right:0;
+}
+.expand_center-leftImg .expand_center-leftImg-right  .edit_first-text{
+    padding: 15px 10px;
+    line-height: 19px;
+}
+.expand_center-leftImg .expand_center-leftImg-right .edit_first .edit_first-text .edit_first-textInput{
+    min-width: 195px;
+}
+.expand_center-leftImg .expand_center-leftImg-right .edit_first .edit_first-text .edit_first-textInput .edit_first-textInputForm{
+    height: 30px;
+    margin-right: 5px;
+    width: 145px;
+    padding-left: 5px;
+    border: 1px solid #C3C6C9;
+    outline: none;
+    line-height: 1;
+    font-size: 12px;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    border-radius: 2px;
+    padding-right: 10px;
+    color: #999;
+}
+
+.expand_center-leftImg .expand_center-leftImg-right  .edit_first-btn{
+    height: 35px;
+    width: 100%;
+    border-top: 1px solid #dbdee1;
+    background: #f9f9f9;
+}
+.expand_center-leftImg .expand_center-leftImg-right  .edit_first-btn a{
+    float: right;
+    height: 35px;
+    line-height: 35px;
+    width: 66px;
+    text-align: center;
+}
+.expand_center-leftImg .expand_center-leftImg-right  .edit_first-btn .edit_first-btn-right{
+    color: #fff;
+    background: #3C8DBC;
+}
+.expand_center-leftImg .expand_center-leftImg-right  .edit_first-btn .edit_first-btn-left{
+    color: #666;
+    border-left: 1px solid #dbdee1;
+}
+
+/*������ֲ���*/
+.expand_center-leftImg .expand_center-leftImg-right .bianJi{
+    left: 360px;
+    width: 271px;
+    height: auto;
+    top: 140px;
+    display: block;
+    position: absolute;
+    z-index: 690;
+    background: #fff;
+    border: 1px solid #dbdee1;
+    box-shadow: 3px 0 10px #B9BFC3;
+    text-align: left;
+    right:0;
+}
+.expand_center-leftImg .expand_center-leftImg-right .bianJi .checkLing-item-ii{
+    display: inline-block;
+}
+.expand_center-leftImg .expand_center-leftImg-right .bianJi .checkLing-item-ii .label-checking-inner{
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    vertical-align: -3px;
+}
+.expand_center-leftImg .expand_center-leftImg-right .bianJi .checkLing-item-ii .label-checking .label-checking-inner{
+    background-image: url("../img/gdt-ui-model.png");
+    background-position: -200px 0;
+}
+.expand_center-leftImg .expand_center-leftImg-right .bianJi .checkLing-item-ii .label-checking.span_checked .label-checking-inner{
+    background-image: url("../img/gdt-ui-model.png");
+    background-position: -236px 0;
+}
+.expand_center-leftImg .expand_center-leftImg-right .bianJi .checkLing-item-ii .labelInputing{
+    margin-right: 0;
+    width: 0;
+    height: 0;
+}
+.pre-dialog-pic{
+	width:100%;
+	height:100%;
+}
+.ad-prepic{
+	
+	width:120px;
+	height:174px;
+}
+/*�Ҳ����*/
+.expand_center-right{
+    width: auto;
+    height: 368px;
+    margin-left: 536px;
+}
+.expand_center-right h3{
+    font-size: 14px;
+    height: 48px;
+    line-height: 48px;
+}
+.expand_center-right h3 a{
+    padding-left: 10px;
+    font-weight: normal;
+    font-size: 12px;
+}
+.expand_center-right .chartMms{
+    padding: 10px 10px 0;
+    background: #ffffff;
+}
+.expand_center-right .chart_series{
+    border: 1px solid #dcdee3 !important;
+    height: 30px;
+    width: 145px;
+    float: left;
+    box-sizing: border-box;
+    padding: 5px 10px;
+    outline: 0;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: inherit;
+    color: inherit;
+    margin-right: 10px!important;
+}
+.chart_series option{
+    background: #fff;
+}
+.chart_series option:hover{background-color: #ddd;}
+.expand_center-right .chartMms .chartMms_chart .chartMms_formView{
+    height: 210px;
+    width:100%;
+    overflow: hidden;
+    margin: 15px 0 15px;
+}
+.expand_center-right .chartMms .chartMms_price .chartMms_priceItem li{
+    height: 30px;
+    float: left;
+    margin-right: 8px;
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    border: 1px solid #C3C7CB;
+    margin-bottom: 8px;
+}
+.expand_center-right .chartMms .chartMms_price .chartMms_priceItem li .chosen_inline{
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    font-size: 0;
+    border-right: 12px solid #6A7588;
+    border-top: 12px dashed transparent;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+.expand_center-right .chartMms .chartMms_price .chartMms_priceItem li .icon_chosen{
+    position: absolute;
+    right: 0;
+    bottom: 1px;
+    width: 6px;
+    height: 5px;
+    overflow: hidden;
+    background-image: url("../img/gdt-toufang-public-20160718_21275.png");
+    background-position: -311px 0;
+    display: none;
+}
+.expand_center-right .chartMms .chartMms_price .chartMms_priceItem li a{
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #505050;
+    font-weight: 900;
+    padding: 0 6px;
+    max-width: 205px;
+    overflow: hidden;
+}
+.expand_center-right .chartMms .chartMms_price .chartMms_priceItem .on-first{
+    height: 28px;
+    border: 2px solid #697489;
+}
+.expand_center-right .chartMms .chartMms_price .chartMms_priceItem .on-first a{
+    color: #697489;
+    height: 28px;
+    line-height: 28px;
+}
+.expand_center-right .chartMms .chartMms_price .chartMms_priceItem .on-first .chosen_inline{
+    display: inline-block;
+}
+.expand_center-right .chartMms .chartMms_price .chartMms_priceItem .on-first .icon_chosen{
+    display: inline-block;
+}
+#ad-details-info-audit .main   .ui-jqgrid-bdiv{
+    height:auto  !important;
+}
+#ad-details-info-planAd .ui-jqgrid-bdiv{
+	height:auto  !important;
+}
+#timesetCustomWrap{
+	display:flex;
+	flex-direction:row;
+	height:65px;
+	justify-content:flex-start;
+	align-items: center;
+}
+#timesetCustomWrap select{
+	border: 1px solid #dcdee3;
+    height: 30px;
+    width: 90px;
+    float: left;
+    box-sizing: border-box;
+    padding: 5px 0px;
+    outline: 0;
+    margin-left: 0px !important;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: inherit;
+    color: inherit;
+     
+}
+

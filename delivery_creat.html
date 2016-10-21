@@ -1,0 +1,2104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <title>唯医广告投放系统</title>
+    <meta name="keywords" content="唯医广告,allin广告,广告">
+    <meta name="description" content="广告主可以使用唯医广告投放平台通过精准定向，便捷的管理、投放广告，并查看推广效果，控制预算。">
+    <link rel="stylesheet" href="css/delivery_base.css">
+    <link rel="stylesheet" href="css/delivery_creat.css">
+    <!--<link rel="stylesheet" href="css/jeDate.css">-->
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/ui.jqgrid.css">
+    <link rel="stylesheet" href="css/ui.jqgrid-bootstrap-ui.css">
+    <link rel="stylesheet" href="css/delivery_public.css">
+    <link rel="stylesheet" href="css/delivery_media.css">
+    <link rel="stylesheet" href="css/delivery_edit.css">
+    <link rel="stylesheet" href="css/delivery_custom.css">
+    <link rel="stylesheet" href="css/delivery_tipspop.css">
+    <link rel="stylesheet" href="css/delivery_tuiguang.css">
+</head>
+
+<body>
+
+
+
+<div class="gdt-tf-edit">
+    <span class="_bubble" rel="bubbleOrder.switchpanel"></span>
+    <div class="create-step create-step1"  id="viewProcess">
+        <h2 class="create-step-title">新建广告</h2>
+        <ul class="create-step-area">
+            <li class="s1">基本信息
+                <i class="create-step-dot"></i>
+                <i class="create-setp-grayline"></i>
+            </li>
+            <li class="s2">规格选择
+                <i class="create-step-dot"></i>
+                <i class="create-setp-grayline"></i>
+            </li>
+            <li class="s3">定向设置
+                <i class="create-step-dot"></i>
+                <i class="create-setp-grayline"></i>
+            </li>
+            <li class="s4">确认提交
+                <i class="create-step-dot"></i>
+                <i class="create-setp-grayline"></i>
+            </li>
+        </ul>
+        <div class="create-step-line"></div>
+    </div>
+    <div id="content" class="" >
+        <div id="wrapBasic" class="toufang-main" >
+            <div id="innerBasic">
+                <div class="area _block">
+                    <div class="lump _blockcontent">
+                        <p class="item">推广计划
+                            <i class="icon ico-help" rel="order.campaignid">
+                            </i>
+                        </p>
+                        <div class="detail">
+                            <div id="campaignidItemsWrap" >
+                             <span class="prompt">
+	                       	 <div class="chosen-container chosen-container-single"  title=""
+	                             id="campaignid_chosen">
+                                 <div id="chosen-result">
+                                     <p id="show-chosen-result">请选择<span class="select-sign"></span></p>
+                                     <ul id="chosen-list" class="none">
+                                     </ul>
+                                 </div>
+                                 <span class="tips-normal _errtips" style="top:30px;left:0px"><i class="icon ico-warning"><i></i></i>请选择推广计划</span>
+	                       	 </div>
+                     		 </span>
+                            </div>
+                            <a href="javascript:;" onclick="return false" class="mg-l10"
+                               opt="campaignidcreate">新建推广计划
+                            </a>
+                            <!-- <span class="mg-l10" id="campaignTips" style="display:none;">每日最高花费50元</span> -->
+                        </div>
+                    </div>
+                    <div class="lump _blockcontent">
+                        <p class="item">广告名称
+                            <i class="icon ico-help" rel="order.ordername">
+                                <i></i>
+                            </i>
+                        </p>
+                        <div class="detail">
+                            <div id="ordernameItemsWrap" >
+                                <span class="prompt">
+                                    <input type="text" id="ordername" class="text input-txt mg-r10" name="ordername" value=""
+                                           placeholder="">
+                                    <span id="ordernameCounterWrap" class="somets c-tx3">
+                                      <strong id="ordernameCounterWrapCurrentLength">0</strong>/
+                                      <span id="ordernameMaxLength">40</span>
+                                    </span>
+                                    <span class="tips-normal _errtips" style="top:30px;left:0px"><i class="icon ico-warning"><i></i></i>请正确输入广告名称</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lump _blockcontent">
+                        <p class="item">投放日期</p>
+
+                        <div class="detail">
+                            <div id="sdate-edateItemsWrap" >
+                                <div class="datechoose l transition datechoose-enduring">
+                                    <div class="input-group input-group-with-addon">
+                                    
+									 <input class="datainp" id="dateinfo" type="text" placeholder="请选择" readonly>
+                                    </div>
+                                    <div class="input-group input-group-with-addon">
+
+                                        <input class="datainp none" id="dateinfohd"   type="text" placeholder="请选择" readonly>
+                                    </div>
+                                    <span class="checkline">
+                          <span class="input-imitate">
+                            <label for="daterangecheck">
+                              <span class="label-imitate checkbox-imitate checkbox-imitate-checked">
+                                <span class="inner"></span>
+                              </span>
+                              <span class="prompt">
+                                <input type="checkbox" id="daterangecheck" class="label-input">
+                              </span>
+                                <span class="uncheckedshow">长期投放(仅设置开始日期)</span>
+                            </label>
+                          </span>
+                        </span>
+                                </div>
+                                  <span class="prompt">
+                                    <input type="hidden" id="sdate" name="sdate" value="2016-09-09">
+                                  </span>
+                      <span class="prompt">
+                        <input type="hidden" id="edate" name="edate" value="">
+                      </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lump _blockcontent">
+                        <p class="item">投放时间</p>
+
+                        <div class="detail">
+                            <div id="alltimeItemsWrap" >
+                                <label class="mg-r35">
+                                    <span class="prompt">
+                                    <input type="radio" class="radio" id="alltime0" name="alltime" value="0"
+                                     opt="alltime1"  checked="">
+                                    </span>全时间段
+                                </label>
+                                <label class="mg-r35">
+                                    <span class="prompt">
+                                        <input type="radio" class="radio" id="alltime1" name="alltime" value="1"
+                                     opt="alltime0" >
+                                    </span>特定时间段
+                                </label>
+ 								<span class="choose-time none"  ><span id="timesetCustomWrap">
+                                    <select class="form_select mg-l10" id="stime">
+                                    <option value="0">0:00</option>
+                                    <option value="1">1:00</option>
+                                    <option value="2">2:00</option>
+                                    <option value="3">3:00</option>
+                                    <option value="4">4:00</option>
+                                    <option value="5">5:00</option>
+                                    <option value="6">6:00</option>
+                                    <option value="7">7:00</option>
+                                    <option value="8">8:00</option>
+                                    <option value="9">9:00</option>
+                                    <option value="10">10:00</option>
+                                    <option value="11">11:00</option>
+                                    <option value="12">12:00</option>
+                                    <option value="13">13:00</option>
+                                    <option value="14">14:00</option>
+                                    <option value="15">15:00</option>
+                                    <option value="16">16:00</option>
+                                    <option value="17">17:00</option>
+                                    <option value="18">18:00</option>
+                                    <option value="19">19:00</option>
+                                    <option value="20">20:00</option>
+                                    <option value="21">21:00</option>
+                                    <option value="22">22:00</option>
+                                    <option value="23">23:00</option>
+                                    <option value="24">24:00</option>
+                                </select>
+                                    <span class="to_date">-</span>
+                                    <select class="form_select" id="etime">
+                                    <option value="24">24:00</option>
+                                    <option value="23">23:00</option>
+                                    <option value="22">22:00</option>
+                                    <option value="21">21:00</option>
+                                    <option value="20">20:00</option>
+                                    <option value="19">19:00</option>
+                                    <option value="18">18:00</option>
+                                    <option value="17">17:00</option>
+                                    <option value="16">16:00</option>
+                                    <option value="15">15:00</option>
+                                    <option value="14">14:00</option>
+                                    <option value="13">13:00</option>
+                                    <option value="12">12:00</option>
+                                    <option value="11">11:00</option>
+                                    <option value="10">10:00</option>
+                                    <option value="9">9:00</option>
+                                    <option value="8">8:00</option>
+                                    <option value="7">7:00</option>
+                                    <option value="6">6:00</option>
+                                    <option value="5">5:00</option>
+                                    <option value="4">4:00</option>
+                                    <option value="3">3:00</option>
+                                    <option value="2">2:00</option>
+                                    <option value="1">1:00</option>
+                                    <option value="0">0:00</option>
+                                </select>
+                                </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lump _blockcontent">
+                        <p class="item">推广标的物</p>
+                        <div class="detail">
+                            <div id="linktypeItemsWrap" >
+                                <div class="detail-aligning" id="linktypeListWrap">
+                                    <div class="frmbox">
+                                        <label>
+										   网站链接                                            	
+                                            <i class="icon ico-help" rel="linktypes.1">
+                                                <i></i>
+                                            </i>
+                                        </label>
+                                        <span id="linktypeWrap1">
+                            <span id="linktargetItemsWrap">
+                              <span id="orderlinkItemsWrap">
+                                <span class="c-tx3 mg-l10">链接地址：
+                                </span>
+                                <span class="prompt">
+                                  <input value="" id="orderlink" name="orderlink" type="text"
+                                         class="text input-txt mg-l10 input-url">
+                                    <span class="tips-normal _errtips" style="top:30px;left:10px"><i class="icon ico-warning"><i></i></i>请输入正确的链接地址</span>
+                                </span>
+ 								
+                              </span>
+                            </span>
+                          </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="wrapCreative" class="toufang-main tf-guige none" >
+            <div id="innerCreative">
+                <div class="area _block">
+                    <div class="lump _blockcontent">
+                        <p class="item">投放平台
+                            <i class="icon ico-help" rel="order.siteset">
+                                <i></i>
+                            </i>
+                        </p>
+                        <div class="detail">
+                            <div id="sitesetItemsWrap" >
+                                <label class="mg-r35">
+                                  <span class="prompt">
+                          		<input type="radio" class="radio" id="siteset0" name="siteset" value="0" opt="siteset1"
+                                 checked="checked">
+                       		  	 </span>PC
+                                </label>
+                                
+                                <label class="mg-r35">
+                                 <span class="prompt">
+                         			 <input type="radio" class="radio" id="siteset1" name="siteset" value="1"
+                                 >
+                       			 </span>安卓
+                                </label>
+
+                                <label class="mg-r35">
+                                    <span class="prompt">
+                          			<input type="radio" class="radio" id="siteset2" name="siteset" value="2"
+                                 >
+                       			 </span>IOS
+                                </label>
+                                
+                                <label class="mg-r35">
+                                   <span class="prompt">
+                         		 <input type="radio" class="radio" id="siteset3" name="siteset" value="3"
+                                 >
+                       			 </span>H5
+                                </label>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lump" id="crtshowtypeWrap">
+                        <p class="item">广告规格
+                            <i class="icon ico-help" rel="order.crtsize">
+                            </i>
+                        </p>
+                        <div class="detail">
+                            <ul class="feedimg">
+                                <li class="feedimg-list this-selected" data-type="display">
+                                    <div class="imgselect">
+                                        <img opt="crtsizedisplaytype"
+                                             src="http://i.gtimg.cn/open_proj/img/gdt_advertise/toufang-v2/feeds1.png">
+                                        <span class="selected-bor-bg"></span>
+                                        <i class="selected-xs-white"></i>
+                                    </div>
+                                    <p class="feedimg-ms">展示广告</p>
+                                    <i class="guide-arr"></i>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                  <div class="lump lump-guige _blockcontent" id="community-content">
+                        <div class="detail">
+                            <div class="main"  >
+                                  <!-- jqGrid所在 -->
+                                <table id="grid-table0"  ></table>
+                                <!-- jqGrid 浏览导航栏所在 -->
+                                <div id="grid-pager0"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div id="wrapTargeting" class="toufang-main gdt-toufang-direc none">
+        <div class="tips-normal forecast" id="targetSeled" >
+            <div class="predict">
+                <div class="pre-box">
+                    <strong>预计最大覆盖用户数 <i class="icon ico-help" rel="order.estimateUsercount"> <i></i> </i> </strong>
+                    <div>
+                        <span class="pre-num" id="usercountWrap">24,100,015</span>人
+                    </div>
+                </div>
+                <div class="pre-box">
+                    <strong>预计最大日曝光量 <i class="icon ico-help" rel="order.estimateViewcount"> <i></i> </i> </strong>
+                    <div>
+                        <span class="pre-num" id="viewcountWrap">123,898,400</span>次
+                    </div>
+                </div>
+            </div>
+            <div class="selected">
+                <strong class="tit">已选条件</strong>
+                <p class="open __seled_stat"> <span class="_js_seled">全量用户;</span> <a href="javascript:;" onclick="return false" class="arrow _js_arrow"></a> </p>
+            </div>
+        </div>
+        <div id="innerTargeting">
+            <div class="area _block">
+                <div class="lump _blockcontent">
+                    <p class="item">快捷定向 <i class="icon ico-help" rel="order.targetpkg"> <i></i> </i> </p>
+                    <div class="detail">
+                        <div id="targetpkgItemsWrap" >
+                            <p> <select class="select_shortcut" id="mid" name="mid"> <option value="0">暂未创建定向包</option> </select> <a href="../tool/targetpackmanage" target="_blank" class="mg-l10">管理定向</a> </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lump _blockcontent">
+                    <p class="item">投放区域</p>
+                    <div class="detail">
+        <span id="area_wrap">
+        <div id="areaItemsWrap" >
+        <p> </p>
+        <div id="enable_areaItemsWrap" >
+            <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="radio" class="radio" id="enable_area0" name="enable_area" value="0" opt="enable_area0" /></span> </span>不限</label>
+            <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="radio" class="radio" id="enable_area1" name="enable_area" value="1" opt="enable_area1" /></span> </span>省市</label>
+            <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="radio" class="radio" id="enable_area2" name="enable_area" value="2" opt="enable_area2" /></span> </span>商圈、地标 <i class="icon ico-help" data-tip="将定向给曾经去过该地理位置的用户人群"> <i></i> </i> </label>
+        </div>
+        <p> </p>
+        <div class="choose-area">
+        <span class="none" id="areacont">
+        <div class="qz_areaselector_box clearfix">
+           <div class="qz_areaselector">
+               <ul class="tab clearfix">
+                   <li><a href="javascript:;" opt="tab" data-value="inside" class="on">国内</a></li>
+                   <li><a href="javascript:;" opt="tab" data-value="overseas">国外</a></li>
+               </ul>
+               <div class="qz_as_choose_list qz_as_list" data-for="inside">
+                   <ul class="qz_as_list_detail">
+                       <li><a href="javascript:;" opt="item" id="_AS:0:34"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">A</span> 安徽</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:82"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">A</span> 澳门</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:11"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">B</span> 北京</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:50" class="qz_as_bg_blue"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">C</span> 重庆</a>
+                           <ul class="qz_as_city_list" style="display: none;">
+                               <li><a href="javascript:;" opt="item" id="_AS:0:5001"> <span class="qz_as_letter"></span> 重庆</a></li>
+                           </ul> </li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:35"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">F</span> 福建</a>
+                           <ul class="qz_as_city_list" style="display: none;">
+                               <li><a href="javascript:;" opt="item" id="_AS:0:3503"> <span class="qz_as_letter"></span> 莆田</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:3501"> <span class="qz_as_letter"></span> 福州</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:3508"> <span class="qz_as_letter"></span> 龙岩</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:3509"> <span class="qz_as_letter"></span> 宁德</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:3507"> <span class="qz_as_letter"></span> 南平</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:3505"> <span class="qz_as_letter"></span> 泉州</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:3502"> <span class="qz_as_letter"></span> 厦门</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:3504"> <span class="qz_as_letter"></span> 三明</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:3599"> <span class="qz_as_letter"></span> 未识别地区</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:3506"> <span class="qz_as_letter"></span> 漳州</a></li>
+                           </ul> </li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:44"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">G</span> 广东</a>
+                           <ul class="qz_as_city_list" style="display: none;">
+                               <li><a href="javascript:;" opt="item" id="_AS:0:4451"> <span class="qz_as_letter"></span> 潮州</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:4419"> <span class="qz_as_letter"></span> 东莞</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:4406"> <span class="qz_as_letter"></span> 佛山</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:4401"> <span class="qz_as_letter"></span> 广州</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:4416"> <span class="qz_as_letter"></span> 河源</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:4413"> <span class="qz_as_letter"></span> 惠州</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:4407"> <span class="qz_as_letter"></span> 江门</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:4452"> <span class="qz_as_letter"></span> 揭阳</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:4409"> <span class="qz_as_letter"></span> 茂名</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:4414"> <span class="qz_as_letter"></span> 梅州</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:4418"> <span class="qz_as_letter"></span> 清远</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:4402"> <span class="qz_as_letter"></span> 韶关</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:4405"> <span class="qz_as_letter"></span> 汕头</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:4415"> <span class="qz_as_letter"></span> 汕尾</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:4403"> <span class="qz_as_letter"></span> 深圳</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:4499"> <span class="qz_as_letter"></span> 未识别地区</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:4453"> <span class="qz_as_letter"></span> 云浮</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:4417"> <span class="qz_as_letter"></span> 阳江</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:4404"> <span class="qz_as_letter"></span> 珠海</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:4408"> <span class="qz_as_letter"></span> 湛江</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:4412"> <span class="qz_as_letter"></span> 肇庆</a></li>
+                               <li><a href="javascript:;" opt="item" id="_AS:0:4420"> <span class="qz_as_letter"></span> 中山</a></li>
+                           </ul> </li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:62"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">G</span> 甘肃</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:45"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">G</span> 广西</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:52"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">G</span> 贵州</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:13"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">H</span> 河北</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:42"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">H</span> 湖北</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:23"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">H</span> 黑龙江</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:41"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">H</span> 河南</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:43"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">H</span> 湖南</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:46"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">H</span> 海南</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:22"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">J</span> 吉林</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:32"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">J</span> 江苏</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:36"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">J</span> 江西</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:21"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">L</span> 辽宁</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:15"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">N</span> 内蒙古</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:64"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">N</span> 宁夏</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:63"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">Q</span> 青海</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:51"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">S</span> 四川</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:37"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">S</span> 山东</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:31"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">S</span> 上海</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:14"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">S</span> 山西</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:61"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">S</span> 陕西</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:12"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">T</span> 天津</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:71"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">T</span> 台湾</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:54"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">X</span> 西藏</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:81"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">X</span> 香港</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:65"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">X</span> 新疆</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:53"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">Y</span> 云南</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:98"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">Z</span> 中国未识别地区</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:33"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter">Z</span> 浙江</a></li>
+                   </ul>
+               </div>
+               <div class="qz_as_choose_list qz_as_list" style="display: none;" data-for="overseas">
+                   <ul class="qz_as_list_detail">
+                       <li><a href="javascript:;" opt="item" id="_AS:0:994"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter"></span> 北美洲</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:996"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter"></span> 大洋洲</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:992"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter"></span> 非洲</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:995"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter"></span> 南美洲</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:993"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter"></span> 欧洲</a></li>
+                       <li><a href="javascript:;" opt="item" id="_AS:0:991"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter"></span> 亚洲</a></li>
+                   </ul>
+               </div>
+           </div>
+           <div class="qz_areaselector_addop">
+               <i class="qz_as_icon_add"></i>
+               <button type="button" class="qz_as_add" opt="add">添加</button>
+           </div>
+           <div class="qz_areaselector qz_areaselector_del">
+               <div class="tab">
+                   已选择
+                   <strong id="_AS_0_SELECTED">0</strong>个,还剩
+                   <span id="_AS_0_REMAINED">200</span>个可选
+               </div>
+               <div class="qz_as_list" id="_AS_0_SELECTEDWRAP"></div>
+           </div>
+        </div></span>
+        <span>
+        <div id="lbs_wrap" class="none" >
+           <div class="custom-tf-area">
+               <div class="custom-tf-selected" id="build-tf-selected">
+                   <div class="tab">
+                       <h3 id="build-tab-h3" >已选区域</h3>
+                       <a class="_clearallselect" href="javascript:;" id="build_clearallselect" >清空全部</a>
+                   </div>
+                   <div class="detail _selected">
+                       <div class="blank _blank" id="build-blank" >
+                           无选择
+                       </div>
+                       <div class="detail-line" >
+                           <span class="item">商圈</span>
+                           <ul class="_shangquan"></ul>
+                       </div>
+                       <div class="detail-line" >
+                           <span class="item">地铁线</span>
+                           <ul class="_ditie"></ul>
+                       </div>
+                       <div class="detail-line" >
+                           <span class="item">地标</span>
+                           <ul class="_dibiao"></ul>
+                       </div>
+                       <div class="detail-line " >
+                           <span class="item">自定义</span>
+                           <ul class="_zidingyi"></ul>
+                       </div>
+                   </div>
+               </div>
+               <div class="custom-tf-way">
+                   <div class="tab">
+                       <ul class="tab-list _tab">
+                           <li class=""> <a href="#" class="_shangquan" data-for="shangquan">商圈</a></li>
+                           <li class=""> <a href="#" class="_ditie" data-for="ditie">地铁线</a></li>
+                           <li class=""> <a href="#" class="_dibiao" data-for="dibiao">地标</a></li>
+                           <li class=""> <a href="#" class="on _zidingyi" data-for="zidingyi">自定义</a></li>
+                       </ul>
+                       <div class="choosead">
+                           <div class="select-loc" id="lbs-nowcity">
+                               深圳
+                               <a href="#" class="drop-down"></a>
+                           </div>
+                           <div class="none" id="lbs-citypanel">
+                               <!--类名popon，弹出下拉城市选择框-->
+                               <!--城市选择组件 S-->
+                               <div class="cityselector">
+                                   <div class="city-inner">
+                                       <div class="city-hot">
+                                           <h3>热门</h3>
+                                           <ul>
+                                               <li> <a href="#" data-cityid="110000">北京</a></li>
+                                               <li> <a href="#" data-cityid="310000">上海</a></li>
+                                               <li> <a href="#" data-cityid="440100">广州</a></li>
+                                               <li> <a href="#" data-cityid="440300">深圳</a></li>
+                                               <li> <a href="#" data-cityid="500000">重庆</a></li>
+                                               <li> <a href="#" data-cityid="120000">天津</a></li>
+                                               <li> <a href="#" data-cityid="610100">西安</a></li>
+                                               <li> <a href="#" data-cityid="330100">杭州</a></li>
+                                               <li> <a href="#" data-cityid="320100">南京</a></li>
+                                               <li> <a href="#" data-cityid="420100">武汉</a></li>
+                                               <li> <a href="#" data-cityid="510100">成都</a></li>
+                                           </ul>
+                                       </div>
+                                       <div class="allcity">
+                                           <h3>全部城市</h3>
+                                           <ul class="classify">
+                                               <li class="letter-list">
+                                                   <div class="tit">
+                                                       A
+                                                   </div>
+                                                   <ul class="city-name">
+                                                       <li> <a href="#" data-cityid="520400">安顺市</a> </li>
+                                                       <li> <a href="#" data-cityid="820000">澳门</a> </li>
+                                                   </ul> </li>
+                                               <li class="letter-list">
+                                                   <div class="tit">
+                                                       B
+                                                   </div>
+                                                   <ul class="city-name">
+                                                       <li> <a href="#" data-cityid="110000">北京市</a> </li>
+                                                       <li> <a href="#" data-cityid="610300">宝鸡市</a> </li>
+                                                   </ul> </li>
+                                               <li class="letter-list">
+                                                   <div class="tit">
+                                                       C
+                                                   </div>
+                                                   <ul class="city-name">
+                                                       <li> <a href="#" data-cityid="500000">重庆市</a> </li>
+                                                       <li> <a href="#" data-cityid="430100">长沙市</a> </li>
+                                                       <li> <a href="#" data-cityid="510100">成都市</a> </li>
+                                                       <li> <a href="#" data-cityid="220100">长春市</a> </li>
+                                                       <li> <a href="#" data-cityid="320400">常州市</a> </li>
+                                                   </ul> </li>
+                                               <li class="letter-list">
+                                                   <div class="tit">
+                                                       D
+                                                   </div>
+                                                   <ul class="city-name">
+                                                       <li> <a href="#" data-cityid="210200">大连市</a> </li>
+                                                       <li> <a href="#" data-cityid="441900">东莞市</a> </li>
+                                                       <li> <a href="#" data-cityid="510600">德阳市</a> </li>
+                                                   </ul> </li>
+                                               <li class="letter-list">
+                                                   <div class="tit">
+                                                       F
+                                                   </div>
+                                                   <ul class="city-name">
+                                                       <li> <a href="#" data-cityid="440600">佛山市</a> </li>
+                                                       <li> <a href="#" data-cityid="350100">福州市</a> </li>
+                                                   </ul> </li>
+                                               <li class="letter-list">
+                                                   <div class="tit">
+                                                       G
+                                                   </div>
+                                                   <ul class="city-name">
+                                                       <li> <a href="#" data-cityid="520100">贵阳市</a> </li>
+                                                       <li> <a href="#" data-cityid="440100">广州市</a> </li>
+                                                   </ul> </li>
+                                               <li class="letter-list">
+                                                   <div class="tit">
+                                                       H
+                                                   </div>
+                                                   <ul class="city-name">
+                                                       <li> <a href="#" data-cityid="150100">呼和浩特市</a></li>
+                                                       <li> <a href="#" data-cityid="230100">哈尔滨市</a></li>
+                                                       <li> <a href="#" data-cityid="340100">合肥市</a> </li>
+                                                       <li> <a href="#" data-cityid="330100">杭州市</a> </li>
+                                                       <li> <a href="#" data-cityid="460100">海口市</a> </li>
+                                                       <li> <a href="#" data-cityid="430400">衡阳市</a> </li>
+                                                       <li> <a href="#" data-cityid="441300">惠州市</a> </li>
+                                                   </ul> </li>
+                                               <li class="letter-list">
+                                                   <div class="tit">
+                                                       J
+                                                   </div>
+                                                   <ul class="city-name">
+                                                       <li> <a href="#" data-cityid="370100">济南市</a> </li>
+                                                       <li> <a href="#" data-cityid="330400">嘉兴市</a> </li>
+                                                       <li> <a href="#" data-cityid="360400">九江市</a> </li>
+                                                       <li> <a href="#" data-cityid="440700">江门市</a> </li>
+                                                   </ul> </li>
+                                               <li class="letter-list">
+                                                   <div class="tit">
+                                                       K
+                                                   </div>
+                                                   <ul class="city-name">
+                                                       <li> <a href="#" data-cityid="530100">昆明市</a> </li>
+                                                   </ul> </li>
+                                               <li class="letter-list">
+                                                   <div class="tit">
+                                                       L
+                                                   </div>
+                                                   <ul class="city-name">
+                                                       <li> <a href="#" data-cityid="620100">兰州市</a> </li>
+                                                       <li> <a href="#" data-cityid="131000">廊坊市</a> </li>
+                                                       <li> <a href="#" data-cityid="331100">丽水市</a> </li>
+                                                       <li> <a href="#" data-cityid="410300">洛阳市</a> </li>
+                                                       <li> <a href="#" data-cityid="510500">泸州市</a> </li>
+                                                       <li> <a href="#" data-cityid="511100">乐山市</a> </li>
+                                                       <li> <a href="#" data-cityid="540100">拉萨市</a> </li>
+                                                       <li> <a href="#" data-cityid="513400">凉山彝族自治州</a></li>
+                                                   </ul> </li>
+                                               <li class="letter-list">
+                                                   <div class="tit">
+                                                       M
+                                                   </div>
+                                                   <ul class="city-name">
+                                                       <li> <a href="#" data-cityid="510700">绵阳市</a> </li>
+                                                   </ul> </li>
+                                               <li class="letter-list">
+                                                   <div class="tit">
+                                                       N
+                                                   </div>
+                                                   <ul class="city-name">
+                                                       <li> <a href="#" data-cityid="360100">南昌市</a> </li>
+                                                       <li> <a href="#" data-cityid="320600">南通市</a> </li>
+                                                       <li> <a href="#" data-cityid="320100">南京市</a> </li>
+                                                       <li> <a href="#" data-cityid="450100">南宁市</a> </li>
+                                                       <li> <a href="#" data-cityid="330200">宁波市</a> </li>
+                                                       <li> <a href="#" data-cityid="511300">南充市</a> </li>
+                                                   </ul> </li>
+                                               <li class="letter-list">
+                                                   <div class="tit">
+                                                       Q
+                                                   </div>
+                                                   <ul class="city-name">
+                                                       <li> <a href="#" data-cityid="370200">青岛市</a> </li>
+                                                       <li> <a href="#" data-cityid="130300">秦皇岛市</a></li>
+                                                       <li> <a href="#" data-cityid="350500">泉州市</a> </li>
+                                                   </ul> </li>
+                                               <li class="letter-list">
+                                                   <div class="tit">
+                                                       S
+                                                   </div>
+                                                   <ul class="city-name">
+                                                       <li> <a href="#" data-cityid="440300">深圳市</a> </li>
+                                                       <li> <a href="#" data-cityid="310000">上海市</a> </li>
+                                                       <li> <a href="#" data-cityid="130100">石家庄市</a></li>
+                                                       <li> <a href="#" data-cityid="210100">沈阳市</a> </li>
+                                                       <li> <a href="#" data-cityid="320500">苏州市</a> </li>
+                                                       <li> <a href="#" data-cityid="350200">厦门市</a> </li>
+                                                       <li> <a href="#" data-cityid="460200">三亚市</a> </li>
+                                                   </ul> </li>
+                                               <li class="letter-list">
+                                                   <div class="tit">
+                                                       T
+                                                   </div>
+                                                   <ul class="city-name">
+                                                       <li> <a href="#" data-cityid="140100">太原市</a> </li>
+                                                       <li> <a href="#" data-cityid="120000">天津市</a> </li>
+                                                       <li> <a href="#" data-cityid="130200">唐山市</a> </li>
+                                                   </ul> </li>
+                                               <li class="letter-list">
+                                                   <div class="tit">
+                                                       W
+                                                   </div>
+                                                   <ul class="city-name">
+                                                       <li> <a href="#" data-cityid="420100">武汉市</a> </li>
+                                                       <li> <a href="#" data-cityid="330300">温州市</a> </li>
+                                                       <li> <a href="#" data-cityid="320200">无锡市</a> </li>
+                                                       <li> <a href="#" data-cityid="610500">渭南市</a> </li>
+                                                       <li> <a href="#" data-cityid="650100">乌鲁木齐市</a></li>
+                                                       <li> <a href="#" data-cityid="370700">潍坊市</a> </li>
+                                                       <li> <a href="#" data-cityid="371000">威海市</a> </li>
+                                                   </ul> </li>
+                                               <li class="letter-list">
+                                                   <div class="tit">
+                                                       X
+                                                   </div>
+                                                   <ul class="city-name">
+                                                       <li> <a href="#" data-cityid="610100">西安市</a> </li>
+                                                       <li> <a href="#" data-cityid="630100">西宁市</a> </li>
+                                                       <li> <a href="#" data-cityid="350200">厦门市</a> </li>
+                                                       <li> <a href="#" data-cityid="320300">徐州市</a> </li>
+                                                       <li> <a href="#" data-cityid="430300">湘潭市</a> </li>
+                                                       <li> <a href="#" data-cityid="810000">香港</a> </li>
+                                                   </ul> </li>
+                                               <li class="letter-list">
+                                                   <div class="tit">
+                                                       Y
+                                                   </div>
+                                                   <ul class="city-name">
+                                                       <li> <a href="#" data-cityid="321000">扬州市</a> </li>
+                                                       <li> <a href="#" data-cityid="370600">烟台市</a> </li>
+                                                       <li> <a href="#" data-cityid="420500">宜昌市</a> </li>
+                                                       <li> <a href="#" data-cityid="450900">玉林市</a> </li>
+                                                       <li> <a href="#" data-cityid="640100">银川市</a> </li>
+                                                   </ul> </li>
+                                               <li class="letter-list">
+                                                   <div class="tit">
+                                                       Z
+                                                   </div>
+                                                   <ul class="city-name">
+                                                       <li> <a href="#" data-cityid="410100">郑州市</a> </li>
+                                                       <li> <a href="#" data-cityid="440400">珠海市</a> </li>
+                                                       <li> <a href="#" data-cityid="330900">舟山市</a> </li>
+                                                       <li> <a href="#" data-cityid="370300">淄博市</a> </li>
+                                                       <li> <a href="#" data-cityid="442000">中山市</a> </li>
+                                                       <li> <a href="#" data-cityid="510300">自贡市</a> </li>
+                                                   </ul> </li>
+                                           </ul>
+                                       </div>
+                                   </div>
+                               </div>
+                               <!--城市选择组件 S-->
+                           </div>
+                       </div>
+                       <i class="choosead-icon"></i>
+                   </div>
+                   <!--TAB end-->
+                   <div class="classify clearfix  _choose" id="build-classify">
+                       <div class="_shangquan _chooseunit" ></div>
+                       <div class="_ditie _chooseunit" ></div>
+                       <div class="_dibiao _chooseunit" ></div>
+                   </div>
+                   <!--自定义 S-->
+                   <!--LBS选择器 S-->
+                   <div class="lbs-v2 _lbs">
+                       <div class="lbs-hd clearfix">
+                           <div class="searchbar">
+                               <!--input初始化字颜色为input-hint；输入文字时，移除input-hint-->
+                               <span class="input-enter"> <input data-enter="nosubmit" type="text" id="map-search" placeholder="请输入要定位的位置" /></span>
+                               <a class="btn-normal btn-search _searchbutton" href="#"> <span>搜索</span></a>
+                           </div>
+                           <div class="custom">
+                               <span class="msg">没有搜到合适的地点？尝试在地图上“打点”</span>
+                               <a href="#" class="btn-custom _pointing">自定义</a>
+                           </div>
+                       </div>
+                       <div class="lbs-bd clearfix">
+                           <div class="lbs-aside _left">
+                               <h3>搜索结果</h3>
+                               <div class="location">
+                                   <div class="inner">
+                                       <ol id="_lbs_search"></ol>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="lbs-main" id="__mapcnt" >
+                               <div class="spread spread-fold _close_left">
+                                   <a href="#">收回侧栏</a>
+                               </div>
+                               <div class="spread spread-expand _open_left" id="build-spread-expand" >
+                                   <a href="#">展开侧栏</a>
+                               </div>
+                               <div class="map" id="map-container" >
+                                   <br />
+                                   <br />
+                                   <br />
+                                   <br />地图
+                                   <br />
+                                   <br />
+                                   <br />
+                                   <br />
+                               </div>
+                               <div class="ex">
+                                   <span class="lb"> <i class="ico ico-spot-a"></i>附近商圈</span>
+                                   <span class="lb"> <i class="ico ico-spot-b"></i>自定义打点</span>
+                                   <span class="lb"> <i class="ico ico-spot-c"></i>搜索结果</span>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   <!--LBS选择器 E-->
+                   <!--自定义 E-->
+                   <input type="hidden" id="area" name="area" value="" />
+               </div>
+           </div>
+        </div> </span>
+        </div>
+        </div> </span>
+                    </div>
+                </div>
+            </div>
+            <div class="area _block">
+                <div class="lump lump-tit _blocktitle" opt="_blockexpand"  title="点击收起">
+                    <h3>基本信息</h3>
+                    <span class="hide"> <span class="arrow"></span> </span>
+                </div>
+                <div class="lump _blockcontent">
+                    <p class="item">用户年龄 <i class="icon ico-help" rel="order.age"> <i></i> </i> </p>
+                    <div class="detail">
+                        <div id="age_out">
+                            <div id="ageItemsWrap" >
+
+                                <div id="age_typeItemsWrap" >
+                                    <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="radio" class="radio" id="age_type0" name="age_type" value="all" opt="age_typeall" /> </span> </span>不限 </label>
+                                    <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="radio" class="radio" id="age_type1" name="age_type" value="single" opt="age_typesingle" /> </span> </span>单年龄段 </label>
+                                </div>
+
+                                <div class="detail-line2 none" style=" " id="age_multi">
+                                    <div id="age_rangeItemsWrap" >
+                                        <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="checkbox" class="checkbox mg-r35" id="age_range0" name="age_range" value="0,17" opt="age_range0,17" /> </span> </span>18岁以下 </label>
+                                        <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="checkbox" class="checkbox mg-r35" id="age_range1" name="age_range" value="18,23" opt="age_range18,23" /> </span> </span>18-23岁 </label>
+                                        <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="checkbox" class="checkbox mg-r35" id="age_range2" name="age_range" value="24,30" opt="age_range24,30" /></span> </span>24-30岁</label>
+                                        <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="checkbox" class="checkbox mg-r35" id="age_range3" name="age_range" value="31,40" opt="age_range31,40" /></span> </span>31-40岁</label>
+                                        <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="checkbox" class="checkbox mg-r35" id="age_range4" name="age_range" value="41,50" opt="age_range41,50" /></span> </span>41-50岁</label>
+                                        <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="checkbox" class="checkbox mg-r35" id="age_range5" name="age_range" value="51,127" opt="age_range51,127" /></span> </span>50岁以上</label>
+                                    </div>
+                                </div>
+        <span id="age_single" class="none"> <p class="detail-line2"></p>
+        <div class="slider_content">
+          <div id="age_single_slider_front" class="front" style="margin:0 30px;">
+              <div class="text text_above text1" style="left: 55px;">
+                  16
+              </div>
+              <div class="text text_above text2" style="left: 131.364px;">
+                  30
+              </div>
+          </div>
+          <div id="age_single_slider">
+              <div class="qz_glide sptb" id="QZSlider_bar2" style="width: 300px;">
+                  <div class="qz_glide_shadow">
+                      <div class="qz_glide_div" id="QZSlider_track2"></div>
+                      <div class="qz_slider_range_div" id="QZSlider_range2" style="left: 64px; width: 75px;"></div>
+                  </div>
+                  <div id="QZSlider_container2" style="position: relative; height: 17px; width: 310px; left: -5px;">
+                      <div class="qz_glide_block" style="left: 62px; top: 0px; cursor: ew-resize;" id="QZSlider_distance2no1"></div>
+                      <div class="qz_glide_block" style="left: 137px; top: 0px; cursor: ew-resize;" id="QZSlider_distance2no2"></div>
+                  </div>
+              </div>
+          </div>
+          <div id="age_single_slider_down" class="front" style="margin:0 30px;">
+              <div class="text text_below" style="left:-5px;">
+                  5岁
+              </div>
+              <div class="result_age" style="left:140px;">
+                  16-30岁
+              </div>
+              <div class="text text_below" style="left:280px;">
+                  60岁
+              </div>
+          </div>
+        </div>
+            <input class="none" type="hidden" id="age_origin" name="age_origin" /> <p> </p>
+            </span>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+                <div class="lump _blockcontent">
+                    <p class="item">性别</p>
+                    <div class="detail">
+                        <div id="genderItemsWrap" >
+                            <label class="mg-r35"> <span class="prompt"> <input type="radio" class="radio" id="gender0" name="gender" value="0" opt="gender0" /> </span>不限 </label>
+                            <label class="mg-r35"> <span class="prompt"> <input type="radio" class="radio" id="gender1" name="gender" value="2" opt="gender2" /> </span>男 </label>
+                            <label class="mg-r35"> <span class="prompt"> <input type="radio" class="radio" id="gender2" name="gender" value="4" opt="gender4" /></span>女</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="lump _blockcontent">
+                    <p class="item">上网场景</p>
+                    <div class="detail">
+                        <div id="build-onlineIteam" style="display:inline">
+                            <p> <span> <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="radio" class="radio" id="enable_scene0" name="enable_scene" value="0" opt="enable_scene0" /> </span> </span>不限 </label> <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="radio" class="radio" id="enable_scene1" name="enable_scene" value="1" opt="enable_scene1" /> </span> </span>自定义 </label> <span> </span> </span> </p>
+                            <p class="detail-line2 none"  id="sceneCnt"> <span> <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="checkbox" class="checkbox mg-r35" id="scene0" name="scene" value="2" opt="scene2" /> </span> </span>公共场所 </label> <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="checkbox" class="checkbox mg-r35" id="scene1" name="scene" value="4" opt="scene4" /> </span> </span>家庭 </label> <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="checkbox" class="checkbox mg-r35" id="scene2" name="scene" value="8" opt="scene8" /> </span> </span>公司 </label> <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="checkbox" class="checkbox mg-r35" id="scene3" name="scene" value="16" opt="scene16" /> </span> </span>学校 </label> <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="checkbox" class="checkbox mg-r35" id="scene4" name="scene" value="1" opt="scene1" /> </span> </span>未知 </label> <span></span> </span> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="area _block">
+                <div class="lump lump-tit _blocktitle" opt="_blockexpand"  title="点击收起">
+                    <h3>用户情况</h3>
+                    <span class="hide"> <span class="arrow"></span> </span>
+                </div>
+                <div class="lump _blockcontent">
+                    <p class="item">用户学历</p>
+                    <div class="detail">
+                        <div id="educationItemsWrap" style="display:inline">
+                            <p><span id="enable_educationItemsWrap"> <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="radio" class="radio" id="enable_education0" name="enable_education" value="0" opt="enable_education0" /> </span> </span>不限 </label> <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="radio" class="radio" id="enable_education1" name="enable_education" value="1" opt="enable_education1" /> </span> </span>自定义 </label> </span> </p>
+                            <p class="detail-line2 none" id="educationCnt"> <span> <label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="education0" name="education" value="2" opt="education2" /> </span> </span>博士 </label> <label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="education1" name="education" value="4" opt="education4" /></span></span>硕士</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="education2" name="education" value="8" opt="education8" /></span></span>本科</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="education3" name="education" value="16" opt="education16" /></span></span>高中</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="education4" name="education" value="32" opt="education32" /></span></span>初中</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="education5" name="education" value="64" opt="education64" /></span></span>小学</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="education6" name="education" value="1" opt="education1" /></span></span>未知</label> </span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lump _blockcontent">
+                    <p class="item">婚恋状态 <i class="icon ico-help" rel="order.userstatus"> <i></i> </i> </p>
+                    <div class="detail">
+                        <div id="userstatusItemsWrap" style="display:inline">
+                            <p> <span id="enable_userstatusItemsWrap"> <label class="mg-r35"> <span class="prompt"><span class="prompt"> <input type="radio" class="radio" id="enable_userstatus0" name="enable_userstatus" value="0" opt="enable_userstatus0" /> </span></span>不限 </label> <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="radio" class="radio" id="enable_userstatus1" name="enable_userstatus" value="1" opt="enable_userstatus1" /> </span> </span>自定义 </label> </span> </p>
+                            <p class="detail-line2 none" id="userstatusCnt"> <span> <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="checkbox" class="checkbox mg-r35" id="userstatus0" name="userstatus" value="9" opt="userstatus9" /> </span> </span>已婚<i class="icon ico-help" rel="targets.userstatus9"><i></i></i> </label> <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="checkbox" class="checkbox mg-r35" id="userstatus1" name="userstatus" value="8" opt="userstatus8" /> </span> </span>单身<i class="icon ico-help" rel="targets.userstatus8"><i></i></i> </label> <label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="userstatus2" name="userstatus" value="4" opt="userstatus4" /></span></span>新婚<i class="icon ico-help" rel="targets.userstatus4"><i></i></i></label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="userstatus3" name="userstatus" value="2" opt="userstatus2" /></span></span>育儿<i class="icon ico-help" rel="targets.userstatus2"><i></i></i></label></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lump _blockcontent">
+                    <p class="item">生活状态</p>
+                    <div class="detail">
+                        <div id="build-living" >
+                            <p> <span> <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="radio" class="radio" id="enable_living_status0" name="enable_living_status" value="0" opt="enable_living_status0" /></span> </span>不限 </label> <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="radio" class="radio" id="enable_living_status1" name="enable_living_status" value="1" opt="enable_living_status1" /> </span> </span>自定义 </label> <span> </span> </span> </p>
+                            <p class="detail-line2 none" style=" " id="living_statusCnt"> <span> <label class="mg-r35"> <span class="prompt"> <span class="prompt"> <input type="checkbox" class="checkbox mg-r35" id="living_status0" name="living_status" value="1" opt="living_status1" /> </span> </span>在校大学生 </label> <span> </span> </span> </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lump _blockcontent" style="display: none;">
+                    <p class="item">群分类定向</p>
+                    <div class="detail">
+                        <div id="imgroupItemsWrap" style="display:inline">
+                            <p></p>
+                            <div id="enable_imgroupItemsWrap" style="display:inline">
+                                <label class="mg-r35"><span class="prompt"><span class="prompt"><input type="radio" class="radio" id="enable_imgroup0" name="enable_imgroup" value="0" opt="enable_imgroup0" /></span></span>不限</label>
+                                <label class="mg-r35"><span class="prompt"><span class="prompt"><input type="radio" class="radio" id="enable_imgroup1" name="enable_imgroup" value="1" opt="enable_imgroup1" /></span></span>自定义</label>
+                            </div>
+                            <p></p>
+                            <div class="detail-line2 none" id="imgroupWrap">
+                                <div class="choose" id="imgroupcont" style="display: none;">
+                                    <div class="qz_areaselector_box clearfix">
+                                        <div class="qz_areaselector">
+                                            <h4>群分类</h4>
+                                            <div class="qz_as_choose_list qz_as_list">
+                                                <ul class="qz_as_list_detail">
+                                                    <li><a href="javascript:;" opt="item" id="_GCS:0:23"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter"></span> 同事.朋友</a></li>
+                                                    <li><a href="javascript:;" opt="item" id="_GCS:0:24"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter"></span> 置业安家</a></li>
+                                                    <li><a href="javascript:;" opt="item" id="_GCS:0:25"> <span class="qz_as_letter"></span> 游戏</a></li>
+                                                    <li><a href="javascript:;" opt="item" id="_GCS:0:28"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter"></span> 兴趣爱好</a></li>
+                                                    <li><a href="javascript:;" opt="item" id="_GCS:0:29"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter"></span> 生活休闲</a></li>
+                                                    <li><a href="javascript:;" opt="item" id="_GCS:0:30"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter"></span> 学习.考试</a></li>
+                                                    <li><a href="javascript:;" opt="item" id="_GCS:0:31"><span class="qz_as_open_list" opt="toggle">+</span> <span class="qz_as_letter"></span> 行业交流</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="qz_areaselector_addop">
+                                            <i class="qz_as_icon_add"></i>
+                                            <button type="button" class="qz_as_add" opt="add">添加</button>
+                                        </div>
+                                        <div class="qz_areaselector qz_areaselector_del">
+                                            <h4>已选择<strong id="_GCS0_GROUPCLASSSELECTED">0</strong>个,还剩<span id="_GCS0_GROUPCLASSREMAINED">20</span>个可选</h4>
+                                            <div class="qz_as_list" id="_GCS0_GROUPSELECTEDWRAP"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="prompt"><input type="hidden" id="imgroup" name="imgroup" value="" /></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lump _blockcontent">
+                    <p class="item">商业兴趣定向</p>
+                    <div class="detail">
+                        <div id="businessinterestItemsWrap" >
+                            <label class="mg-r35"><span class="prompt"><input type="radio" class="radio" id="businessinterest0" name="businessinterest" value="0" opt="businessinterest0" /></span>不限</label>
+                            <label class="mg-r35"><span class="prompt"><input type="radio" class="radio" id="businessinterest1" name="businessinterest" value="1" opt="businessinterest1" /></span>自定义</label>
+                            <div class="detail-line2 none" id="BIWrap" style=" ">
+                                <div id="businessInterestSelectDiv">
+                                    <div id="businessInterestSelector">
+                                        <div class="qz_areaselector_box clearfix" id="_MT_0">
+                                            <div class="qz_areaselector">
+                                                <h4>商业兴趣</h4>
+                                                <div class="qz_as_choose_list qz_as_list">
+                                                    <ul class="qz_as_list_detail">
+                                                        <li><a href="javascript:;" opt="item" id="_MT:0:1:1" onclick="return false"><span class="qz_as_open_list" opt="toggle">+</span><strong>教育</strong></a> </li>
+                                                        <li><a href="javascript:;" opt="item" id="_MT:0:1:2" onclick="return false"><span class="qz_as_open_list" opt="toggle">+</span><strong>旅游</strong></a> </li>
+                                                        <li><a href="javascript:;" opt="item" id="_MT:0:1:3" onclick="return false"><span class="qz_as_open_list" opt="toggle">+</span><strong>金融</strong></a> </li>
+                                                        <li><a href="javascript:;" opt="item" id="_MT:0:1:4" onclick="return false"><span class="qz_as_open_list" opt="toggle">+</span><strong>汽车</strong></a> </li>
+                                                        <li><a href="javascript:;" opt="item" id="_MT:0:1:5" onclick="return false"><span class="qz_as_open_list" opt="toggle">+</span><strong>房产</strong></a> </li>
+                                                        <li><a href="javascript:;" opt="item" id="_MT:0:1:6" onclick="return false"><span class="qz_as_open_list" opt="toggle">+</span><strong>家居</strong></a> </li>
+                                                        <li><a href="javascript:;" opt="item" id="_MT:0:1:7" onclick="return false"><span class="qz_as_open_list" opt="toggle">+</span><strong>服饰鞋帽箱包</strong></a> </li>
+                                                        <li><a href="javascript:;" opt="item" id="_MT:0:1:8" onclick="return false"><span class="qz_as_open_list" opt="toggle">+</span><strong>餐饮美食</strong></a> </li>
+                                                        <li><a href="javascript:;" opt="item" id="_MT:0:1:9" onclick="return false"><span class="qz_as_open_list" opt="toggle">+</span><strong>生活服务</strong></a> </li>
+                                                        <li><a href="javascript:;" opt="item" id="_MT:0:1:10" onclick="return false"><span class="qz_as_open_list" opt="toggle">+</span><strong>商务服务</strong></a> </li>
+                                                        <li><a href="javascript:;" opt="item" id="_MT:0:1:11" onclick="return false"><span class="qz_as_open_list" opt="toggle">+</span><strong>美容</strong></a> </li>
+                                                        <li><a href="javascript:;" opt="item" id="_MT:0:1:12" onclick="return false"><span class="qz_as_open_list" opt="toggle">+</span><strong>互联网/电子产品</strong></a> </li>
+                                                        <li><a href="javascript:;" opt="item" id="_MT:0:1:13" onclick="return false"><span class="qz_as_open_list" opt="toggle">+</span><strong>体育运动</strong></a> </li>
+                                                        <li><a href="javascript:;" opt="item" id="_MT:0:1:14" onclick="return false"><span class="qz_as_open_list" opt="toggle">+</span><strong>医疗健康</strong></a> </li>
+                                                        <li><a href="javascript:;" opt="item" id="_MT:0:1:15" onclick="return false"><span class="qz_as_open_list" opt="toggle">+</span><strong>孕产育儿</strong></a> </li>
+                                                        <li><a href="javascript:;" opt="item" id="_MT:0:1:16" onclick="return false"><span class="qz_as_open_list" opt="toggle">+</span><strong>游戏</strong></a> </li>
+                                                        <li><a href="javascript:;" opt="item" id="_MT:0:1:21" onclick="return false"><span class="qz_as_open_list" opt="toggle">+</span><strong>政法</strong></a> </li>
+                                                        <li><a href="javascript:;" opt="item" id="_MT:0:1:25" onclick="return false"><span class="qz_as_open_list" opt="toggle">+</span><strong>娱乐休闲</strong></a> </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="qz_areaselector_addop">
+                                                <i class="qz_as_icon_add"></i>
+                                                <button type="button" class="qz_as_add" opt="add">添加</button>
+                                            </div>
+                                            <div class="qz_areaselector qz_areaselector_del">
+                                                <h4>已选择<strong id="_MT_0_SELECTED">0</strong>个,还剩<span id="_MT_0_REMAINED">200</span>个可选</h4>
+                                                <div class="qz_as_list" id="_MT_0_SELECTEDWRAP"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="prompt"><input type="hidden" id="businessinterest" value="" /></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lump _blockcontent">
+                    <p class="item">关键词 <i class="icon ico-help" rel="order.keyword"> <i></i> </i> </p>
+                    <div class="detail">
+                        <div id="keywordItemsWrap"  class="keyword-detail">
+                            <label class="mg-r35"><span class="prompt"><input type="radio" class="radio" id="keyword0" name="keyword" value="0" opt="keyword0" /></span>不限</label>
+                            <label class="mg-r35"><span class="prompt"><input type="radio" class="radio" id="keyword1" name="keyword" value="1" opt="keyword1" /></span>自定义</label>
+                            <div class="detail-line2 none" id="keywordWrap">
+                                <div class="qz_areaselector_box addkeywords clearfix">
+                                    <div class="qz_areaselector">
+                                        <div class="qz_as_choose_list qz_as_list">
+                                            <textarea placeholder="请输入关键词，一行一个" id="keywordIn" name="keywordIn"></textarea>
+                                        </div>
+                                    </div>
+                                    <!-- end qz_areaselector -->
+                                    <div class="qz_areaselector_addop">
+                                        <i class="qz_as_icon_add"></i>
+                                        <button type="button" id="btnAddKeyword" class="qz_as_add">添加</button>
+                                    </div>
+                                    <div class="qz_areaselector qz_areaselector_del">
+                                        <div class="tab">
+                                            已选择
+                                            <strong id="keywordSelectedCount">0</strong>个,还剩
+                                            <span id="keywordLimitRemainCount">2000</span>个可选
+                                        </div>
+                                        <div class="qz_as_list">
+                                            <ul class="qz_as_list_detail clearfix" id="keywordSelectedList"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="uploadtips">
+                                    <label class="ui-button btn-upload" for="keywords-upload">上传</label>
+                                    <input type="file" id="keywords-upload" class="upload-native" name="file" />
+                                    <span class="upload-native-tips">请上传包含关键词的文件，限txt文件（每一行只能有一个词，不支持标点符号隔开）。关键词提交上限2000个。</span>
+                                    <div id="keywordlistItemsWrap">
+                                        <div class="prompt"></div>
+                                        <input type="hidden" id="keywordlist" name="keywordlist" />
+                                    </div>
+                                </div>
+                                <p class="detail-line2" id="keyword_typeItemsWrap" style="display:none"> 高级选项： <label><span class="prompt"><input type="checkbox" class="checkbox" name="keyword_type" checked="checked" value="1" />QQ群场景<i class="icon ico-help" rel="order.keywordContext"><i></i></i></span></label> <label><span class="prompt"><input type="checkbox" class="checkbox mg-l25" name="keyword_type" checked="checked" value="2" />用户兴趣<i class="icon ico-help" rel="order.keywordUser"><i></i></i></span></label> </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="area _block">
+                <div class="lump lump-tit _blocktitle" opt="_blockexpand"  title="点击收起">
+                    <h3>用户行为 <span class="tips-remark c-tx3"> <i class="icon ico-tips"> <i></i> </i>对投放非APP的广告，请勿使用“应用用户”定向</span> </h3>
+                    <span class="hide"> <span class="arrow"></span> </span>
+                </div>
+                <div class="lump _blockcontent">
+                    <p class="item">付费用户</p>
+                    <div class="detail">
+                        <div style="display:inline">
+                            <p><span id="enable_paymentItemsWrap"><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="radio" class="radio" id="enable_payment0" name="enable_payment" value="0" opt="enable_payment0" /></span></span>不限</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="radio" class="radio" id="enable_payment1" name="enable_payment" value="1" opt="enable_payment1" /></span> </span>自定义</label> </span></p>
+                            <p class="detail-line2 none" style=" " id="paymentCnt"><span id="paymentItemsWrap"><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="payment0" name="payment" value="1" opt="payment1" /></span></span>潜在虚拟付费用户</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="payment1" name="payment" value="2" opt="payment2" /></span> </span>已有电商付费</label> </span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lump _blockcontent" style="display: none;">
+                    <p class="item">粉丝定向</p>
+                    <div class="detail">
+                        <p> <span> <label class="mg-r35"> <span class="prompt"> <input type="radio" class="radio" id="fans0" name="fans" value="0" opt="fans0" /></span>不限</label> <label class="mg-r35"> <span class="prompt"> <input type="radio" class="radio" id="fans1" name="fans" value="2" opt="fans2" /></span>粉丝</label> <label class="mg-r35"> <span class="prompt"> <input type="radio" class="radio" id="fans2" name="fans" value="1" opt="fans1" /></span>非粉丝</label> <span></span> </span> </p>
+                    </div>
+                </div>
+                <div class="lump _blockcontent">
+                    <p class="item">APP行为定向</p>
+                    <div class="detail">
+                        <div id="appaction_object_typeItemsWrap" style="display:inline">
+                            <label class="mg-r35"><span class="prompt"><input type="radio" class="radio" id="appaction_object_type0" name="appaction_object_type" value="0" opt="appaction_object_type0" /></span>不限</label>
+                            <label class="mg-r35"><span class="prompt"><input type="radio" class="radio" id="appaction_object_type1" name="appaction_object_type" value="4" opt="appaction_object_type4" /></span>按分类</label>
+                            <label class="mg-r35"><span class="prompt"><input type="radio" class="radio" id="appaction_object_type2" name="appaction_object_type" value="3" opt="appaction_object_type3" /></span>按APP</label>
+                            <div class="detail-line2 none" id="appActionWrap0" >
+                                <div  >
+                                    <div id="appCateSelector">
+                                        <div class="qz_areaselector_box clearfix" id="_MT_9">
+                                            <div class="qz_areaselector">
+                                                <h4>分类</h4>
+                                                <div class="qz_as_choose_list qz_as_list">
+                                                    <ul class="qz_as_list_detail">
+                                                        <li><a href="javascript:;" opt="item,toggle" id="_MT:9:1:34359739236" onclick="return false"><span class="qz_as_open_list" opt="toggle">+</span><strong>游戏</strong></a></li>
+                                                        <li><a href="javascript:;" opt="item,toggle" id="_MT:9:1:34359739237" onclick="return false"><span class="qz_as_open_list" opt="toggle">+</span><strong>非游戏</strong></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="qz_areaselector_addop">
+                                                <i class="qz_as_icon_add"></i>
+                                                <button type="button" class="qz_as_add" opt="add">添加</button>
+                                            </div>
+                                            <div class="qz_areaselector qz_areaselector_del">
+                                                <h4>已选择<strong id="_MT_9_SELECTED">0</strong>个,还剩<span id="_MT_9_REMAINED">10</span>个可选</h4>
+                                                <div class="qz_as_list" id="_MT_9_SELECTEDWRAP"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="prompt"><input type="hidden"   name="appaction_object_id" value="" /></span>
+                                </div>
+                                <div class="detail-line2">
+                                    用户行为：
+                                    <div   style="display:inline">
+                                        <label class="mg-r35"><span class="prompt"><input type="checkbox" class="checkbox mg-r35"  name="appaction_operator" value="100000" opt="appaction_operator100000" /></span>活跃</label>
+                                        <label class="mg-r35"><span class="prompt"><input type="checkbox" class="checkbox mg-r35"   name="appaction_operator" value="100001" opt="appaction_operator100001" /></span>付费</label>
+                                    </div>
+                                </div>
+                                <div class="detail-line2">
+                                    <div   style="display:inline">
+                                        <label>距今日 <span class="prompt"><input type="text"   name="appaction_time" class="text" size="10" value="30" /></span> 天以内</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="detail-line2 none" id="appActionWrap1" >
+                                <div  >
+                                    <div id="appSelector">
+                                        抱歉，暂无APP数据
+                                    </div>
+                                    <span class="prompt"><input type="hidden"  name="appaction_object_id" value="" /></span>
+                                </div>
+                                <div class="detail-line2">
+                                    用户行为：
+                                    <div   style="display:inline">
+                                        <label class="mg-r35"><span class="prompt"><input type="checkbox" class="checkbox mg-r35"   name="appaction_operator" value="100000" opt="appaction_operator100000" /></span>活跃</label>
+                                        <label class="mg-r35"><span class="prompt"><input type="checkbox" class="checkbox mg-r35"   name="appaction_operator" value="100001" opt="appaction_operator100001" /></span>付费</label>
+                                    </div>
+                                </div>
+                                <div class="detail-line2">
+                                    <div   style="display:inline">
+                                        <label>距今日 <span class="prompt"><input type="text"   name="appaction_time" class="text" size="10" value="30" /></span> 天以内</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lump _blockcontent">
+                    <p class="item">应用用户 <i class="icon ico-help" rel="order.appuser"> <i></i> </i> </p>
+                    <div class="detail">
+                        <div id="appuserItemsWrap" >
+                            <label class="mg-r35"> <span class="prompt"> <input type="radio" class="radio" id="appuser0" name="appuser" value="0" opt="appuser0" /></span>不限</label>
+                            <label class="mg-r35"> <span class="prompt"> <input type="radio" class="radio" id="appuser1" name="appuser" value="1" opt="appuser1" /></span>未安装该应用的用户</label>
+                            <label class="mg-r35"> <span class="prompt"> <input type="radio" class="radio" id="appuser2" name="appuser" value="2" opt="appuser2" /></span>已安装该应用的用户</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="area _block">
+                <div class="lump lump-tit _blocktitle" opt="_blockexpand"  title="点击收起">
+                    <h3>自定义用户 <span class="tips-remark c-tx3"> <i class="icon ico-tips"> <i></i> </i>您可在工具箱—自定义人群管理工具中创建特定人群，作为该条广告的定向，用于精准投放</span> </h3>
+                    <span class="hide"> <span class="arrow"></span> </span>
+                </div>
+                <div class="lump _blockcontent">
+                    <p class="item">自定义人群</p>
+                    <div class="detail">
+                        <div id="numberpackageItemsWrap" style="display:inline">
+                            <label class="mg-r35"><span class="prompt"><input type="radio" class="radio" id="numberpackage0" name="numberpackage" value="0" opt="numberpackage0" /></span>不限</label>
+                            <label class="mg-r35"><span class="prompt"><input type="radio" class="radio" id="numberpackage1" name="numberpackage" value="1" opt="numberpackage1" /></span>自定义</label>
+                            <label class="mg-r35"><span class="prompt"><input type="radio" class="radio" id="numberpackage2" name="numberpackage" value="2" opt="numberpackage2" /></span>DMP用户<span class="tips-remark c-tx3"><i class="icon ico-tips"><i></i></i>暂不支持预估覆盖用户数和日曝光量</span></label>
+                            <div class="detail-line2 none" id="numberpackageWrap" style=" ">
+                                <div class="dingxiang-selecter dingxiang-selecter-w">
+                                    <div class="remarketing">
+                                        <div class="search_form clearfix">
+                                            <div class="search_form_item">
+                                                <a href="../tool/rulelist#op=addrule" id="numberpackageCrtNew" target="_blank" class="ui_btn">创建新用户群</a>
+                                            </div>
+                                            <div class="search_form_item">
+                                                <a href="../tool/rulelist" target="_blank" id="numberpackageMng" class="ui_btn">管理所有用户群</a>
+                                            </div>
+                                        </div>
+                                        <div class="remarketing-wrap-hd">
+                                            <div class="rwh-title" opt="numberpackageIncludeToggle" data-status="expand">
+                                                定向用户群
+                                                <i class="icon ico-help" rel="order.numberpackageinclude"><i></i></i>
+                                            </div>
+                                            <p class="rwh-line"></p>
+                                        </div>
+                                        <div class="remarketing_main" id="numberpackageIncludeWrap">
+                                            <div class="remarketing_box">
+                                                <h4>用户群列表</h4>
+                                                <div class="choosebox">
+                                                    <h4 class="clearfix"><span class="th th_rule hdlv">规则名称</span><span class="th">覆盖数量</span><span class="th th_status">状态</span> </h4>
+                                                    <div class="list">
+                                                        <ul id="numberpackageIncludeToSelect">
+                                                            <li>暂未创建规则</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <a href="javascript:;" onclick="GDT.pluginNumberPackage.renderHandler();return false" class="refresh-box">刷新</a>
+                                            </div>
+                                            <div class="addopbox">
+                                                <button class="btn btn-default" id="numberpackageIncludeSelectBtn"> 添加 </button>
+                                            </div>
+                                            <div class="remarketing_box">
+                                                <h4>定向列表</h4>
+                                                <div class="choosebox delbox">
+                                                    <h4 class="clearfix"><span class="th th_rule hdlv">规则名称</span><span class="th">覆盖数量</span><span class="th th_status">状态</span> </h4>
+                                                    <div class="list">
+                                                        <ul id="numberpackageIncludeSelected" style="zoom: 1;"></ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" id="numberpackage_include" value="" />
+                                            <div class="notice_txt">
+                                                <p class="c_tx3"> 当多个用户群被添加到一个广告上时，这些用户群之间为“或者”关系，只要其中一个用户群有效，广告即可被投放</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dingxiang-selecter dingxiang-selecter-w" id="numberpackageExcludeContainer">
+                                    <div class="remarketing">
+                                        <div class="remarketing-wrap-hd">
+                                            <div class="rwh-title" opt="numberpackageExcludeToggle" data-status="expand">
+                                                排除用户群
+                                                <i class="icon ico-help" rel="order.numberpackageinclude"><i></i></i>
+                                            </div>
+                                            <p class="rwh-line"></p>
+                                        </div>
+                                        <div class="remarketing_main" id="numberpackageExcludeWrap">
+                                            <div class="remarketing_box">
+                                                <h4>用户群列表</h4>
+                                                <div class="choosebox">
+                                                    <h4 class="clearfix"><span class="th th_rule hdlv">名称</span><span class="th">覆盖数量</span><span class="th">状态</span><span class="th th_user_type">类型</span></h4>
+                                                    <div class="list">
+                                                        <ul id="numberpackageExcludeToSelect">
+                                                            <li>暂未创建规则</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <a href="javascript:;" onclick="GDT.pluginNumberPackage.renderHandler();return false" class="refresh-box">刷新</a>
+                                            </div>
+                                            <div class="addopbox">
+                                                <button class="btn btn-default" id="numberpackageExcludeSelectBtn"> 添加 </button>
+                                            </div>
+                                            <div class="remarketing_box">
+                                                <h4>排除列表</h4>
+                                                <div class="choosebox delbox">
+                                                    <h4 class="clearfix"><span class="th th_rule hdlv">规则名称</span><span class="th">覆盖数量</span><span class="th th_status">状态</span> </h4>
+                                                    <div class="list">
+                                                        <ul id="numberpackageExcludeSelected" style="zoom: 1;"></ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" id="numberpackage_exclude" value="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="area _block">
+                <div class="lump lump-tit _blocktitle" opt="_blockexpand"  title="点击收起">
+                    <h3>消费能力</h3>
+                    <span class="hide"> <span class="arrow"></span> </span>
+                </div>
+                <div class="lump _blockcontent">
+                    <p class="item">居住社区价格(元/m&sup2;)</p>
+                    <div class="detail">
+                        <div id="resident_community_priceItemsWrap" style="display:inline">
+                            <p><span id="enable_resident_community_priceItemsWrap"><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="radio" class="radio" id="enable_resident_community_price0" name="enable_resident_community_price" value="0" opt="enable_resident_community_price0" /></span></span>不限</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="radio" class="radio" id="enable_resident_community_price1" name="enable_resident_community_price" value="1" opt="enable_resident_community_price1" /></span></span>自定义</label></span></p>
+                            <div class="detail-line2 none" id="resident_community_price_cnt">
+                                <div class="slider_content weather price-section" id="resident_community_price_slider_cnt">
+                                    <div class="front" style="margin-bottom:10px;">
+                                        <div class="text text_above text1" style="width: auto; left: 33.3333px;">
+                                            3000
+                                        </div>
+                                        <div class="text text_above text2" style="width: auto; left: 148.485px;">
+                                            10000
+                                        </div>
+                                    </div>
+                                    <div id="resident_community_price_single_slider" class="slider-main">
+                                        <div class="qz_glide sptb" id="QZSlider_bar0" style="width: 300px;">
+                                            <div class="qz_glide_shadow">
+                                                <div class="qz_glide_div" id="QZSlider_track0"></div>
+                                                <div class="qz_slider_range_div" id="QZSlider_range0" style="left: 33px; width: 115px;"></div>
+                                            </div>
+                                            <div id="QZSlider_container0" style="position: relative; height: 17px; width: 310px; left: -5px;">
+                                                <div class="qz_glide_block" style="left: 33.3333px; top: 0px; cursor: ew-resize;" id="QZSlider_distance0no1"></div>
+                                                <div class="qz_glide_block" style="left: 148.485px; top: 0px; cursor: ew-resize;" id="QZSlider_distance0no2"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="front">
+                                        <div class="text text_below _min" style="left:-5px;">
+                                            1000
+                                        </div>
+                                        <div class="result_age" style="left:140px;">
+                                            10000
+                                        </div>
+                                        <div class="text text_below _max" style="left:280px;">
+                                            100000
+                                        </div>
+                                    </div>
+                                </div>
+                                <input class="none" type="hidden" id="resident_community_price" name="resident_community_price" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="area _block weather">
+                <div class="lump lump-tit _blocktitle" opt="_blockexpand"  title="点击收起">
+                    <h3>天气定向 <i class="icon ico-help" rel="order.weather"> <i></i> </i> </h3>
+                    <span class="hide"> <span class="arrow"></span> </span>
+                </div>
+                <div class="lump _blockcontent">
+                    <p class="item">穿衣指数<i class="icon ico-help" rel="order.dressindex"><i></i></i></p>
+                    <div class="detail">
+                        <div style="display:inline">
+                            <p><span id="enable_dressindexItemsWrap"><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="radio" class="radio" id="enable_dressindex0" name="enable_dressindex" value="0" opt="enable_dressindex0" /></span></span>不限</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="radio" class="radio" id="enable_dressindex1" name="enable_dressindex" value="1" opt="enable_dressindex1" /></span> </span>自定义</label> </span></p>
+                            <p class="detail-line2  dress none" id="dressindexcnt"><span id="dressindexItemsWrap"><a href="javascript:void(0);" onclick="return false" class="cb-0" id="dressindex0" name="dressindex" rel="8">寒冷</a><a href="javascript:void(0);" onclick="return false" class="cb-1" id="dressindex1" name="dressindex" rel="7">冷</a><a href="javascript:void(0);" onclick="return false" class="cb-2" id="dressindex2" name="dressindex" rel="6">凉</a><a href="javascript:void(0);" onclick="return false" class="cb-3" id="dressindex3" name="dressindex" rel="5">温凉</a><a href="javascript:void(0);" onclick="return false" class="cb-4" id="dressindex4" name="dressindex" rel="4">凉舒适</a><a href="javascript:void(0);" onclick="return false" class="cb-5" id="dressindex5" name="dressindex" rel="3">舒适</a><a href="javascript:void(0);" onclick="return false" class="cb-6" id="dressindex6" name="dressindex" rel="2">热舒适</a><a href="javascript:void(0);" onclick="return false" class="cb-7" id="dressindex7" name="dressindex" rel="1">炎热</a> </span> </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lump _blockcontent">
+                    <p class="item">紫外线指数</p>
+                    <div class="detail">
+                        <div style="display:inline">
+                            <p><span id="enable_uvindexItemsWrap"><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="radio" class="radio" id="enable_uvindex0" name="enable_uvindex" value="0" opt="enable_uvindex0" /></span></span>不限</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="radio" class="radio" id="enable_uvindex1" name="enable_uvindex" value="1" opt="enable_uvindex1" /></span> </span>自定义</label> </span></p>
+                            <p class="detail-line2 sun none" id="uvindexcnt"><span id="uvindexItemsWrap"><a href="javascript:void(0);" onclick="return false" class="cb-0" id="uvindex0" name="uvindex" rel="1">弱</a><a href="javascript:void(0);" onclick="return false" class="cb-1" id="uvindex1" name="uvindex" rel="2">偏弱</a><a href="javascript:void(0);" onclick="return false" class="cb-2" id="uvindex2" name="uvindex" rel="3">中等</a><a href="javascript:void(0);" onclick="return false" class="cb-3" id="uvindex3" name="uvindex" rel="4">偏强</a><a href="javascript:void(0);" onclick="return false" class="cb-4" id="uvindex4" name="uvindex" rel="5">强</a> </span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lump _blockcontent">
+                    <p class="item">化妆指数<i class="icon ico-help" rel="order.makeupindex"><i></i></i></p>
+                    <div class="detail">
+                        <div style="display:inline">
+                            <p><span id="enable_makeupindexItemsWrap"><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="radio" class="radio" id="enable_makeupindex0" name="enable_makeupindex" value="0" opt="enable_makeupindex0" /></span></span>不限</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="radio" class="radio" id="enable_makeupindex1" name="enable_makeupindex" value="1" opt="enable_makeupindex1" /></span> </span>自定义</label> </span></p>
+                            <p class="detail-line2 none" id="makeupindexcnt"><span id="makeupindexItemsWrap"><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="makeupindex0" name="makeupindex" value="1" opt="makeupindex1" /></span></span>保湿防龟裂</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="makeupindex1" name="makeupindex" value="2" opt="makeupindex2" /></span></span>保湿</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="makeupindex2" name="makeupindex" value="3" opt="makeupindex3" /></span></span>控油</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="makeupindex3" name="makeupindex" value="4" opt="makeupindex4" /></span> </span>防晒</label> </span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lump _blockcontent">
+                    <p class="item">天气气象</p>
+                    <div class="detail">
+                        <div style="display:inline">
+                            <p><span id="enable_climateItemsWrap"><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="radio" class="radio" id="enable_climate0" name="enable_climate" value="0" opt="enable_climate0" /></span></span>不限</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="radio" class="radio" id="enable_climate1" name="enable_climate" value="1" opt="enable_climate1" /></span> </span>自定义</label></span></p>
+                            <p class="detail-line2 none" id="climatecnt"><span id="climateItemsWrap"><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="climate0" name="climate" value="101" opt="climate101" /></span></span>晴天</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="climate1" name="climate" value="102" opt="climate102" /></span></span>阴天</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="climate2" name="climate" value="103" opt="climate103" /></span></span>雨天</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="climate3" name="climate" value="104" opt="climate104" /></span></span>雾</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="climate4" name="climate" value="105" opt="climate105" /></span></span>雪</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="climate5" name="climate" value="106" opt="climate106" /></span> </span>沙尘</label> </span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lump _blockcontent">
+                    <p class="item">温度(&deg;C)</p>
+                    <div class="detail">
+                        <div id="temperatureItemsWrap" style="display:inline">
+                            <p><span id="enable_temperatureItemsWrap"><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="radio" class="radio" id="enable_temperature0" name="enable_temperature" value="0" opt="enable_temperature0" /></span></span>不限</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="radio" class="radio" id="enable_temperature1" name="enable_temperature" value="1" opt="enable_temperature1" /></span></span>自定义<span class="tips-remark c-tx3"><i class="icon ico-tips"><i></i></i>暂不支持预估覆盖用户数和日曝光量</span></label> </span></p>
+                            <div class="detail-line2 none" id="temperaturecnt">
+                                <div class="slider_content weather" id="temperature_slider_cnt">
+                                    <div class="front" style="margin-bottom:10px;">
+                                        <div class="text text_above text1" style="width: auto; left: 144px;">
+                                            -2
+                                        </div>
+                                        <div class="text text_above text2" style="width: auto; left: 225px;">
+                                            25
+                                        </div>
+                                    </div>
+                                    <div id="temperature_single_slider" class="slider-main">
+                                        <div class="qz_glide sptb" id="QZSlider_bar1" style="width: 300px;">
+                                            <div class="qz_glide_shadow">
+                                                <div class="qz_glide_div" id="QZSlider_track1"></div>
+                                                <div class="qz_slider_range_div" id="QZSlider_range1" style="left: 144px; width: 81px;"></div>
+                                            </div>
+                                            <div id="QZSlider_container1" style="position: relative; height: 17px; width: 310px; left: -5px;">
+                                                <div class="qz_glide_block" style="left: 144px; top: 0px; cursor: ew-resize;" id="QZSlider_distance1no1"></div>
+                                                <div class="qz_glide_block" style="left: 225px; top: 0px; cursor: ew-resize;" id="QZSlider_distance1no2"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="front">
+                                        <div class="text text_below _min" style="left:-5px;">
+                                            -50
+                                        </div>
+                                        <div class="result_age _midText" style="left:140px;">
+                                            -2至25&deg;C
+                                        </div>
+                                        <div class="text text_below _max" style="left:280px;">
+                                            50
+                                        </div>
+                                    </div>
+                                </div>
+                                <input class="none" type="hidden" id="temperature" name="temperature" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="area _block" style="display: block;">
+                <div class="lump lump-tit _blocktitle" opt="_blockexpand" style="cursor:pointer" title="点击收起">
+                    <h3> 移动定向<span class="tips-remark c-tx3"><i class="icon ico-tips"><i></i></i>对投放到非移动平台上的广告，请勿使用“移动定向”</span> </h3>
+                    <span class="hide"><span class="arrow"></span></span>
+                </div>
+                <div class="lump _blockcontent" style="display: none;">
+                    <p class="item">设备价格定向</p>
+                    <div class="detail">
+                        <div style="display:inline">
+                            <p><span id="enable_mobilepriceItemsWrap"><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="radio" class="radio" id="enable_mobileprice0" name="enable_mobileprice" value="0" opt="enable_mobileprice0" /></span></span>不限</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="radio" class="radio" id="enable_mobileprice1" name="enable_mobileprice" value="1" opt="enable_mobileprice1" /> </span></span>自定义<span class="tips-remark c-tx3"><i class="icon ico-tips"><i></i></i>仅对移动平台、消息流广告有效</span></label> </span></p>
+                            <p class="detail-line2" style="display: none;" id="mobilepriceCnt"><span id="mobilepriceItemsWrap"><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="mobileprice0" name="mobileprice" value="2" opt="mobileprice2" /></span></span>1500元以下</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="mobileprice1" name="mobileprice" value="3" opt="mobileprice3" /></span></span>1500~2500元</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="mobileprice2" name="mobileprice" value="4" opt="mobileprice4" /></span></span>2500元以上</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="mobileprice3" name="mobileprice" value="1" opt="mobileprice1" /></span> </span>未知</label> </span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lump _blockcontent" style="display: none;">
+                    <p class="item">操作系统</p>
+                    <div class="detail">
+                        <div style="display:inline">
+                            <p><span id="enable_osItemsWrap"><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="radio" class="radio" id="enable_os0" name="enable_os" value="0" opt="enable_os0" /></span></span>不限</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="radio" class="radio" id="enable_os1" name="enable_os" value="1" opt="enable_os1" /> </span></span>自定义</label> </span></p>
+                            <p class="detail-line2" style="display: none;" id="osCnt"><span id="osItemsWrap"><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="os0" name="os" value="1" opt="os1" /></span></span>iOS</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="os1" name="os" value="2" opt="os2" /></span></span>Android</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="os2" name="os" value="4" opt="os4" /></span></span>Windows</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="os3" name="os" value="8" opt="os8" /></span></span>Symbian</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="os4" name="os" value="16" opt="os16" /></span></span>Java</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="os5" name="os" value="32" opt="os32" /></span></span>未知 </label> </span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lump _blockcontent" style="display: none;">
+                    <p class="item">联网方式<i class="icon ico-help" rel="order.connectiontype"><i></i></i> </p>
+                    <div class="detail">
+                        <div style="display:inline">
+                            <p><span id="enable_connectiontypeItemsWrap"><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="radio" class="radio" id="enable_connectiontype0" name="enable_connectiontype" value="0" opt="enable_connectiontype0" /></span></span>不限</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="radio" class="radio" id="enable_connectiontype1" name="enable_connectiontype" value="1" opt="enable_connectiontype1" /> </span></span>自定义<span class="tips-remark c-tx3"><i class="icon ico-tips"><i></i></i>若您投放wap文字链广告，请不要选择此定向，会导致没有曝光</span></label> </span></p>
+                            <p class="detail-line2" style="display: none;" id="connectiontypeCnt"><span id="connectiontypeItemsWrap"><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="connectiontype0" name="connectiontype" value="2" opt="connectiontype2" /></span></span>WIFI</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="connectiontype1" name="connectiontype" value="8" opt="connectiontype8" /></span></span>3G</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="connectiontype2" name="connectiontype" value="16" opt="connectiontype16" /></span></span>4G</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="connectiontype3" name="connectiontype" value="1" opt="connectiontype1" /></span> </span>未知</label> </span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lump _blockcontent" style="display: none;">
+                    <p class="item">移动运营商</p>
+                    <div class="detail">
+                        <div style="display:inline">
+                            <p><span id="enable_ispItemsWrap"><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="radio" class="radio" id="enable_isp0" name="enable_isp" value="0" opt="enable_isp0" /></span></span>不限</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="radio" class="radio" id="enable_isp1" name="enable_isp" value="1" opt="enable_isp1" /></span> </span>自定义</label> </span></p>
+                            <p class="detail-line2" style="display: none;" id="ispCnt"><span id="ispItemsWrap"><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="isp0" name="isp" value="2" opt="isp2" /></span></span>移动</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="isp1" name="isp" value="4" opt="isp4" /></span></span>联通</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="isp2" name="isp" value="8" opt="isp8" /></span></span>电信</label><label class="mg-r35"><span class="prompt"><span class="prompt"><input type="checkbox" class="checkbox mg-r35" id="isp3" name="isp" value="1" opt="isp1" /></span> </span>未知</label> </span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lump _blockcontent" style="display: none;">
+                    <p class="item">移动媒体分类</p>
+                    <div class="detail">
+                        <div id="media_industryItemsWrap" style="display:inline">
+                            <label class="mg-r35"><span class="prompt"><input type="radio" class="radio" id="media_industry0" name="media_industry" value="0" opt="media_industry0" /></span>不限</label>
+                            <label class="mg-r35"><span class="prompt"><input type="radio" class="radio" id="media_industry1" name="media_industry" value="1" opt="media_industry1" /></span>自定义<span class="tips-remark c-tx3"><i class="icon ico-tips"><i></i></i>仅对移动外部媒体有效</span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="area _block">
+                <div class="lump">
+                    <p class="item">保存定向<i class="icon ico-help" rel="targetPack.quickSave"><i></i></i></p>
+                    <div class="detail">
+                        <p class=""><input type="checkbox" class="checkbox" id="enableNewTargetpack" />保存并关联以上定向条件</p>
+                    </div>
+                </div>
+                <div class="lump dx-spread dx-spread-on _js_newpackedit none" id="newrule" style=" ">
+                    <p class="item">定向名称</p>
+                    <div class="detail" id="newRulenameItemsWrap">
+                        <span class="prompt"><input type="text" id="newRulename" name="newRulename" class="text" /></span>
+                        <p class="words">定向条件A（<strong>3</strong>/20）</p>
+                        <p class="tips c-tx3" id="_quicksave_tip">定向名称不能与现有定向重名，最多可保存20个有效定向（0/20）</p>
+                    </div>
+                </div>
+                <div class="lump dx-spread dx-spread-on _js_newpackedit none" style=" ">
+                    <p class="item"> 定向描述</p>
+                    <div class="detail">
+                        <textarea id="newRuledesc"></textarea>
+                        <p class="tips c-tx3">定向描述为可选输入</p>
+                        <p class="btn-line"><a href="javascript:;" onclick="return false" id="saveNewtargetpack">确定</a><a href="javascript:;" onclick="return false" id="cancelNewTargetpack">取消</a></p>
+                    </div>
+                </div>
+                <div class="lump dx-spread dx-spread-done _js_newpackinfo none" style=" ">
+                    <p class="item"> 定向名称</p>
+                    <div class="detail">
+                        <p class="words" id="newRulenameInfo">定向条件</p>
+                    </div>
+                </div>
+                <div class="lump dx-spread dx-spread-done _js_newpackinfo none" >
+                    <p class="item"> 定向描述</p>
+                    <div class="detail">
+                        <p class="words" id="newRuledescInfo"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="area _block">
+                <div class="lump _blockcontent">
+                    <p class="item">付费模式</p>
+                    <div class="detail">
+                        <div id="feetypeItemsWrap" >
+                            <label class="mg-r35"> <span class="prompt"> <input type="radio" class="radio" id="feetype0" name="feetype" value="0" opt="feetype1" checked="checked"/></span>CPC <i class="icon ico-help" rel="order.CPC"> <i></i> </i> </label>
+                            <label class="mg-r35"> <span class="prompt"> <input type="radio" class="radio" id="feetype1" name="feetype" value="1" opt="feetype4" /></span>CPM <i class="icon ico-help" rel="order.CPM"> <i></i> </i> </label>
+                        </div>
+                        <div class="detail innerdetail detail-line2 none" id="cpmFreq">
+                            频次控制:
+                            <label> <input type="radio" opt="feetypeswitchcpmfreq" class="radio mg-l15" name="cpm_freq" value="0" checked="checked" />不限</label>
+                            <label> <input type="radio" opt="feetypeswitchcpmfreq" class="radio mg-l15" name="cpm_freq" value="1" />自定义</label>
+                            <span id="cpmFreqVals" class="none"> <input type="text" class="text c-tx3 mg-l25" placeholder="请输入1000以内正整数" name="min_impression_include" /> <span>-</span> <input type="text" placeholder="请输入1000以内正整数" class="text c-tx3" name="max_impression_include" /></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lump _blockcontent">
+                    <p class="item">广告出价</p>
+                    <div class="detail">
+                        <p id=""> <span id="feepriceItemsWrap"> <label> <span class="prompt"> <input type="text" class="text" id="feeprice" name="feeprice"  /></span> <span class="priceMeasure">元/点击</span></label> <label class=""> <strong class="mg-l35 tips-strong">建议出价 <span class="normal" id="pricesense">1.15~2.71</span> <span class="priceMeasure">元/点击</span></strong> <i class="icon ico-help" rel="order.suggestPrice"> <i> </i> </i> </label> </span> </p>
+                        <p class="tips mg-l10 mg-t10 none" id="priceSettingTips"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div id="wrapPreview" class="toufang-main none" >
+            <div id="innerPreview">
+                <div class="area _block">
+                    <div class="lump _blockcontent">
+                        <p class="item">广告预览</p>
+
+                        <div class="detail">
+                            <div id="preview_orderimgItemsWrap" >
+
+                                <ul class="ggshow sucai-display">
+                                    <li>
+                                        <p class="place c-tx3" title="160×210图文创意1">160×210图文创意1</p>
+
+                                        <div class="ggao-display">
+                                            <div class="show-tuwen">
+                                                <a href="http://www.baidu.com" title="点击跳转广告目标页" target="_blank">
+                                                    <img src="http://e.qq.com/ec/api.php?mod=order&amp;act=showimg&amp;image_key=MVl6WXpRell6Y2pZbU5XTnpJRFpoSm1ZMmtqTm1salk0WVRaa2x6TWhOV1ByTjJQdzh5WnVCbkw0bGpRQzVVUVJGRU9tOWtlWUpFVkJGMFVFRjBaREYwUndZa1NCRkVSdkF6TDBSMlp2NDJZdWNXYnBSM1p1UUhabkIzTHZvRGMwUkhh&amp;g_tk=781204735&amp;owner=2383110"
+                                                         onload="GDT.util.scaleImage(this,220,192)"
+                                                         ></a>
+
+                                                <p>
+                                                    <a href="http://www.baidu.com" title="点击跳转广告目标页" target="_blank"
+                                                       class="_title">xcvfg</a></p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="area _block">
+                    <div class="lump _blockcontent">
+                        <p class="item">推广计划</p>
+
+                        <div class="detail">
+                            <div id="preview_campaignItemsWrap" >
+                                <!-- <p></p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lump _blockcontent">
+                        <p class="item">广告名称</p>
+
+                        <div class="detail">
+                            <div id="preview_ordernameItemsWrap" >
+                                <!-- <p></p> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lump _blockcontent">
+                        <p class="item">推广标的物</p>
+                        <div class="detail">
+                        	<p>？？？</p>
+                        </div>
+                    </div>
+                    <div class="lump _blockcontent">
+                        <p class="item">投放日期</p>
+
+                        <div class="detail">
+                            <div id="preview_dateItemsWrap" >
+                                <!-- <p>2016-09-09开始(长期投放)</p> -->
+                            </div>
+                            <div id="preview_dateItemsEndTimeWrap" >
+                                <!-- <p>2016-09-09开始(长期投放)</p> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="area _block">
+                    <div class="lump _blockcontent">
+                        <p class="item">定向用户</p>
+                        <div class="detail">
+                            <div id="preview_userrulesItemsWrap" >
+                                <p>？？？？</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lump _blockcontent">
+                        <p class="item">广告出价</p>
+                        <div class="detail">
+                            <div id="preview_paymentItemsWrap" >
+                            </div>
+                            <div id="preview_paymentPriceWrap" >
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div id="wrapButton" class="button-line s-btnline" >
+            <a href="javascript:;" opt="close" onclick="return false" data-skipvalidate="1" class="close s-button-back"
+               title="收起面板" data-hottag="atlas.orderbutton.close" data-hotsender="parent">取消</a>
+            <a href="javascript:;" opt="toCreative" onclick="return false" class="next s-button-right" title="跳到规格选择"
+               data-hottag="atlas.orderbutton.tocreative" 
+               data-hotsender="parent">下一步</a>
+            <a href="javascript:;" opt="toBasic" onclick="return false" data-skipvalidate="1"
+               class="previous s-button-back" title="回到基本信息" data-hottag="atlas.orderbutton.tobasic"
+               data-hotsender="parent" >上一步</a>
+        </div>
+        <div id="submitAdm">
+            <div class="modal-content modal-width-ft">
+                <div class="modal-body">
+                    <div class="tipsline"><i class="ico-done l"><i></i></i>
+
+                        <div class="tipsline-info"><strong class="tipsline-info-title">提交成功</strong>
+                            <p class="tipsline-info-p">您还可以 <a href="javascript:;"
+                                                               id="cloneOrder" data-hottag="atlas.ordercomplete.clone"
+                                                               data-hotsender="parent">复制广告</a> 或 <a href="javascript:;"
+                                                                                                     data-hottag="atlas.ordercomplete.continue"
+                                                                                                     data-hotsender="parent" id="creat-new-order">继续新建</a>
+                            </p></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="closepop" data-hottag="atlas.ordercomplete.close"
+                            data-hotsender="parent">关闭
+                    </button>
+                    <button type="button" href="http://e.qq.com/atlas/2383110/report/order?oid=22575359"
+                            target="_parent" data-href="http://e.qq.com/atlas/2383110/report/order?oid=22575359"
+                            class="btn btn-primary" id="viewOrder" data-hottag="atlas.ordercomplete.view"
+                            data-hotsender="parent">查看广告
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="javascript:;" onclick="return false" class="backtop none" id="__backtotop">
+    <span>&nbsp;</span>
+</a>
+
+<div id="dialog_main_16" class="qz_dialog_layer_main qz_dialog_btn_bpadding"
+     style="border-width: 2px; padding: 0px;display:none; margin: 0px; background-color: transparent;">
+    <div class="qz_dialog_custom custom_left" id="dragdrop_31" style="cursor: move;"></div>
+    <div class="qz_dialog_custom custom_top" id="dragdrop_32" style="cursor: move;"></div>
+    <div id="dialog_head_16" class="qz_dialog_layer_title" style="display: none; cursor: move;"><h3
+            id="dialog_title_16">请确认：</h3>
+        <button id="dialog_button_16" title="关闭" class="qz_dialog_btn_close"><span class="none">╳</span></button>
+    </div>
+    <div id="dialog_content_16" class="qz_dialog_layer_cont" style="height:120px;background-color:transparent;">
+        <div class="qz_dialog_layer_confirm_content" style="width:260px;"><i
+                class="qz_dialog_layer_icon qz_dialog_layer_icon_notice"></i>
+
+            <h3>请先登录</h3>
+
+            <div class="qz_dialog_layer_confirm_content_p"></div>
+            <div class="qz_dialog_layer_confirm_content_p"><i class=""><i></i></i></div>
+        </div>
+    </div>
+    <div class="qz_dialog_layer_ft">
+        <div class="qz_dialog_layer_other"></div>
+        <div class="qz_dialog_layer_op"><a href="javascript:;" title="点击这里确认"
+                                           class="qz_dialog_layer_btn qz_dialog_layer_sub"><span>重试</span></a></div>
+    </div>
+</div>
+<div class="qz_msgbox_layer_wrap" id="q_Msgbox" >
+    <span class="qz_msgbox_layer" style="z-index: 10000;" id="mode_tips_v2">
+        <span class="gtl_ico_hits"></span>
+        最少需要一个创意
+        <span class="gtl_end"></span>
+    </span>
+</div>
+<div class="qz_msgbox_layer_wrap" id="q_Msgbox0" >
+    <span class="qz_msgbox_layer" style="z-index: 10000;" id="mode_tips_v3">
+        <span class="gtl_ico_hits"></span>
+        请检查创意相关信息
+        <span class="gtl_end"></span>
+    </span>
+</div>
+<div class="qz_msgbox_layer_wrap" id="q_Msgbox1" >
+    <span class="qz_msgbox_layer" style="z-index: 10000;">
+        <span class="gtl_ico_hits"></span>
+        请检查是否上传完毕
+        <span class="gtl_end"></span>
+    </span>
+</div>
+
+<div class="qz_dialog_layer none" tabindex="-1" role="dialog" id="qz_dialog_instance_qzDialog1"
+     aria-labelledby="dialog_head_1" aria-describedby="dialog_content_1"
+     style="z-index: 9001; position: absolute; top: 226px; left: 624px; width: 544px;">
+    <div id="dialog_main_1" class="qz_dialog_layer_main qz_dialog_btn_bpadding">
+        <div class="qz_dialog_custom custom_left" id="dragdrop_1" style="cursor: move;"></div>
+        <div class="qz_dialog_custom custom_top" id="dragdrop_2" style="cursor: move;"></div>
+        <div id="dialog_head_1" class="qz_dialog_layer_title" style="cursor: move;"><h3 id="dialog_title_1">创建新推广计划</h3>
+            <button id="dialog_button_1" title="关闭" class="qz_dialog_btn_close"><span class="none">╳</span></button>
+        </div>
+        <div id="dialog_content_1" class="qz_dialog_layer_cont" style="height:250px;">
+            <div class="creat-tuiguang">
+                <div class="creat-list">
+                    <div class="creat-tit">推广计划名称</div>
+                    <div class="creat-des">
+                        <div class="input-group input-group-with-addon"><input type="text" value="" class="form-control"
+                                                                               id="campaignname"
+                                                                               aria-label="推广计划名称"><span
+                                id="campaignnameCounterWrap" class="input-group-addon"><strong
+                                id="campaignnameCounterWrapCurrentLength">0</strong>/<span
+                                id="campaignnameMaxLength">40</span></span></div>
+                    </div>
+                </div>
+                <div class="creat-list ">
+                    <div class="creat-tit">设定投放限额</div>
+                    <div class="creat-des">
+                        <div class="input-group  input-group-with-addon"><input type="text" value="" id="daybudget"
+                                                                                class="form-control"
+                                                                                aria-label="设定投放限额"><span
+                                class="input-group-addon">元/天</span></div>
+                    </div>
+                </div>
+                <div class="creat-list none">
+                    <div class="creat-tit">设置频控上限</div>
+                    <div class="tf-status clearfix"><span class="line-span"><input type="radio" id="max_impression_way1"
+                                                                                   class="radio clip" value="0"
+                                                                                   name="max_impression_way_type"
+                                                                                   checked=""><label class="input-radio"
+                                                                                                     for="max_impression_way1"></label><label
+                            for="max_impression_way1"> 不限</label></span><span class="line-span"><input type="radio"
+                                                                                                       id="max_impression_way2"
+                                                                                                       class="radio clip"
+                                                                                                       value="1"
+                                                                                                       name="max_impression_way_type"><label
+                            class="input-radio" for="max_impression_way2"></label><label for="max_impression_way2">
+                        自定义<span class="sp">(设置后不可修改)</span></label></span></div>
+                    <div class="creat-des none" id="max_impression_wrap">
+                        <div class="input-group"><input type="text" value="" id="max_impression_include"
+                                                        class="form-control" placeholder="正整数，不超过1000"
+                                                        aria-label="设置频控上限"></div>
+                    </div>
+                </div>
+                <div class="creat-list">
+                    <div class="creat-tit">设置投放方式<i class="icon ico-help" rel="order.speedmode"><i></i></i></div>
+                </div>
+                <div class="tf-status" id="speedmode" data-value="1"><span class="line-span"><input type="radio"
+                                                                                                    id="way1"
+                                                                                                    class="radio clip"
+                                                                                                    name="speedmodeValue"
+                                                                                                    title="标准投放"
+                                                                                                    checked=""><label
+                        class="input-radio" for="way1"></label><label class="" for="way1"> 标准投放</label></span><span
+                        class="line-span"><input type="radio" id="way2" class="radio clip" name="speedmodeValue"
+                                                 title="加速投放"><label class="input-radio" for="way2"></label><label
+                        class="" for="way2"> 加速投放</label></span></div>
+            </div>
+        </div>
+        <div class="qz_dialog_layer_ft">
+            <div class="qz_dialog_layer_other"></div>
+            <div class="qz_dialog_layer_op"><a href="javascript:;" title="点击这里保存"
+                                               class="qz_dialog_layer_btn qz_dialog_layer_sub"><span>保存</span></a><a
+                    href="javascript:;" title="点击这里取消"
+                    class="qz_dialog_layer_btn qz_dialog_layer_nor"><span>取消</span></a></div>
+        </div>
+    </div>
+</div>
+<div class="qz_dialog_layer" tabindex="-1" role="dialog" id="qz_dialog_instance_qzDialog5"
+     aria-labelledby="dialog_head_5" aria-describedby="dialog_content_5"
+     style="z-index: 9005; display:none;position: absolute; top: 593px; left: 315px; width: 352px; background-color: rgb(255, 255, 255);">
+    <div id="dialog_main_5" class="qz_dialog_layer_main qz_dialog_btn_bpadding"
+         style="border-width: 2px; padding: 0px; margin: 0px; background-color: transparent;">
+        <div class="qz_dialog_custom custom_left" id="dragdrop_9" style="cursor: move;"></div>
+        <div class="qz_dialog_custom custom_top" id="dragdrop_10" style="cursor: move;"></div>
+        <div id="dialog_head_5" class="qz_dialog_layer_title" style="display: none; cursor: move;"><h3
+                id="dialog_title_5">请确认：</h3>
+            <button id="dialog_button_5" title="关闭" class="qz_dialog_btn_close"><span class="none">╳</span></button>
+        </div>
+        <div id="dialog_content_5" class="qz_dialog_layer_cont" style="height:120px;background-color:transparent;">
+            <div class="qz_dialog_layer_confirm_content" style="width:260px;"><i
+                    class="qz_dialog_layer_icon qz_dialog_layer_icon_notice"></i>
+
+                <h3>确认删除此创意吗？</h3>
+
+                <div class="qz_dialog_layer_confirm_content_p"></div>
+                <div class="qz_dialog_layer_confirm_content_p"><i class=""><i></i></i></div>
+            </div>
+        </div>
+        <div class="qz_dialog_layer_ft">
+            <div class="qz_dialog_layer_other"></div>
+            <div class="qz_dialog_layer_op"><a href="javascript:;" title="点击这里确认"
+                                               class="qz_dialog_layer_btn qz_dialog_layer_sub" id="delAdCreatetyBtn"><span>确认</span></a><a
+                    href="javascript:;" title="点击这里否决"
+                    class="qz_dialog_layer_btn qz_dialog_layer_nor"><span>取消</span></a></div>
+        </div>
+    </div>
+</div>
+<div class="qz_dialog_layer" tabindex="-1" role="dialog" id="qz_dialog_instance_qzDialog3"
+     aria-labelledby="dialog_head_3" aria-describedby="dialog_content_3"
+     style="z-index: 9003; display:none;position: absolute; top: 568px; left: 316px; width: 350px;">
+    <div id="dialog_main_3" class="qz_dialog_layer_main qz_dialog_btn_bpadding">
+        <div class="qz_dialog_custom custom_left" id="dragdrop_5" style="cursor: move;"></div>
+        <div class="qz_dialog_custom custom_top" id="dragdrop_6" style="cursor: move;"></div>
+        <div id="dialog_head_3" class="qz_dialog_layer_title" style="cursor: move;"><h3 id="dialog_title_3">上传失败</h3>
+            <button id="dialog_button_3" title="关闭" class="qz_dialog_btn_close"><span class="none">╳</span></button>
+        </div>
+        <div id="dialog_content_3" class="qz_dialog_layer_cont" style="height:170px;">
+            <div class="qz_dialog_layer_confirm_content" style="width:260px;"><i
+                    class="qz_dialog_layer_icon qz_dialog_layer_icon_error"></i>
+
+                <h3>上传失败。<br>请检查图片的大小和像素规格。<br>注意：非当前广告规格的图片无法上传，你可以在投放该规格广告时再上传。</h3>
+
+                <div class="qz_dialog_layer_confirm_content_p"></div>
+                <div class="qz_dialog_layer_confirm_content_p"><i class=""><i></i></i></div>
+            </div>
+        </div>
+        <div class="qz_dialog_layer_ft">
+            <div class="qz_dialog_layer_other"></div>
+            <div class="qz_dialog_layer_op"><a href="javascript:;" title="点击这里确认"
+                                               class="qz_dialog_layer_btn qz_dialog_layer_sub"><span>确定</span></a></div>
+        </div>
+    </div>
+</div>
+<div class="qz_dialog_layer" tabindex="-1" role="dialog" id="qz_dialog_instance_qzDialog16"
+     aria-labelledby="dialog_head_3" aria-describedby="dialog_content_3"
+     style="z-index: 9003; display:none;position: absolute; top: 568px; left: 316px; width: 350px;">
+    <div   class="qz_dialog_layer_main qz_dialog_btn_bpadding">
+        <div class="qz_dialog_custom custom_left"   style="cursor: move;"></div>
+        <div class="qz_dialog_custom custom_top"   style="cursor: move;"></div>
+        <div   class="qz_dialog_layer_title" style="cursor: move;"><h3  >确定上传</h3>
+
+        </div>
+        <div   class="qz_dialog_layer_cont" style="height:120px;">
+
+        </div>
+        <div class="qz_dialog_layer_ft">
+            <div class="qz_dialog_layer_other"><a href="javascript:;" title="点击这里取消"
+                                                  class="qz_dialog_layer_btn qz_dialog_layer_nor"><span>取消</span></a></div>
+            <div class="qz_dialog_layer_op"><a href="javascript:;" title="点击这里确认"
+                                               class="qz_dialog_layer_btn qz_dialog_layer_sub"><span>确定</span></a></div>
+        </div>
+    </div>
+</div>
+<div class="qz_dialog_layer" tabindex="-1" role="dialog" id="qz_dialog_instance_qzDialog11"
+     aria-labelledby="dialog_head_3" aria-describedby="dialog_content_3"
+     style="z-index: 9003; display:none;position: absolute; top: 568px;   width: 350px;">
+    <div   class="qz_dialog_layer_main qz_dialog_btn_bpadding">
+        <div class="qz_dialog_custom custom_left"   style="cursor: move;"></div>
+        <div class="qz_dialog_custom custom_top"   style="cursor: move;"></div>
+        <div  class="qz_dialog_layer_title" style="cursor: move;"><h3  >正在上传</h3>
+
+        </div>
+        <div  class="qz_dialog_layer_cont" style="height:78px;">
+            <div class="qz_dialog_layer_confirm_content" style="width:260px;"><i
+                    class="qz_dialog_layer_icon qz_dialog_layer_icon_error"></i>
+
+                <h3>正在上传</h3>
+
+                <div class="qz_dialog_layer_confirm_content_p"></div>
+                <div class="qz_dialog_layer_confirm_content_p"><i class=""><i></i></i></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="qz_dialog_layer" tabindex="-1" role="dialog" id="updata-success"
+     aria-labelledby="dialog_head_2" aria-describedby="dialog_content_2"
+     style="z-index: 9002; display:none;position: absolute; top: 441px; left: 449px; width: 350px;">
+    <div id="dialog_main_2" class="qz_dialog_layer_main qz_dialog_btn_bpadding">
+        <div class="qz_dialog_custom custom_left" id="dragdrop_3" style="cursor: move;"></div>
+        <div class="qz_dialog_custom custom_top" id="dragdrop_4" style="cursor: move;"></div>
+        <div id="dialog_head_2" class="qz_dialog_layer_title" style="cursor: move;"><h3 id="dialog_title_2">
+            上传成功</h3>
+            <button id="dialog_button_2" title="关闭" class="qz_dialog_btn_close"><span class="none">╳</span>
+            </button>
+        </div>
+        <div id="dialog_content_2" class="qz_dialog_layer_cont" style="height:120px;">
+            <div class="qz_dialog_layer_confirm_content" style="width:260px;"><i
+                    class="qz_dialog_layer_icon qz_dialog_layer_icon_done"></i>
+
+                <h3>上传成功。<br>本次共上传1个创意。</h3>
+
+                <div class="qz_dialog_layer_confirm_content_p"></div>
+                <div class="qz_dialog_layer_confirm_content_p"><i class=""><i></i></i></div>
+            </div>
+        </div>
+        <div class="qz_dialog_layer_ft">
+            <div class="qz_dialog_layer_other"></div>
+            <div class="qz_dialog_layer_op"><a href="javascript:;" title="点击这里确认"
+                                               class="qz_dialog_layer_btn qz_dialog_layer_sub"><span>确定</span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="qz_dialog_layer" tabindex="-1" role="dialog" id="qz_dialog_instance_qzDialog12"
+     aria-labelledby="dialog_head_2" aria-describedby="dialog_content_2"
+     style="z-index: 9002; position: absolute; top: 435px; left: 213px; display:none;width: 352px; background-color: rgb(255, 255, 255);">
+    <div   class="qz_dialog_layer_main qz_dialog_btn_bpadding"
+         style="border-width: 2px; padding: 0px; margin: 0px; background-color: transparent;">
+        <div class="qz_dialog_custom custom_left"  style="cursor: move;"></div>
+        <div class="qz_dialog_custom custom_top"  style="cursor: move;"></div>
+        <div   class="qz_dialog_layer_title" style="display: none; cursor: move;"><h3
+                 >请确认：</h3>
+            <button   title="关闭" class="qz_dialog_btn_close"><span class="none">╳</span></button>
+        </div>
+        <div   class="qz_dialog_layer_cont" style="height:120px;background-color:transparent;">
+            <div class="qz_dialog_layer_confirm_content" style="width:260px;"><i
+                    class="qz_dialog_layer_icon qz_dialog_layer_icon_notice"></i>
+
+                <h3>确定要放弃当前的编辑吗？</h3>
+
+                <div class="qz_dialog_layer_confirm_content_p"></div>
+                <div class="qz_dialog_layer_confirm_content_p"><i class=""><i></i></i></div>
+            </div>
+        </div>
+        <div class="qz_dialog_layer_ft">
+            <div class="qz_dialog_layer_other"></div>
+            <div class="qz_dialog_layer_op"><a href="javascript:;" title="点击这里确认"
+                                               class="qz_dialog_layer_btn qz_dialog_layer_sub"><span>确认</span></a><a
+                    href="javascript:;" title="点击这里否决"
+                    class="qz_dialog_layer_btn qz_dialog_layer_nor"><span>取消</span></a></div>
+        </div>
+    </div>
+</div>
+<table id="creat-ad-demo">
+    <tbody>
+    <tr id="_content_crtsize2" class="none" data-parent="2" >
+        <td colspan="6" class="open" style="z-index:799">
+            <div class="guige-detail" >
+                <div class="miaoshu _sketchWrap" >
+                    <div class="piclist">
+                        <div class="bx-wrapper" style="max-width: 790px; margin: 0px auto;">
+                            <div class="bx-viewport"
+                                 style="width: 100%; overflow: hidden; position: relative; height: 245px;">
+                                <ul id="_creativesslides_2" style="width: 715%; position: relative; left: 0px;">
+
+                                </ul>
+                            </div>
+                            <div class="bx-controls"></div>
+                        </div>
+                        <span class="turning turn-l"><a class="bx-prev disabled" href="javascript:;"></a></span><span
+                            class="turning turn-r"><a class="bx-next" href="javascript:;"></a></span>
+                        <div class="tips"><i class="icon ico-tips"><i></i></i>您的广告将可能出现在以上示例广告位，但仅会出现在“QQ空间”投放平台</div>
+                    </div>
+                </div>
+                <div class="_groupCreativeWrap updata clearfix no-bd">
+                    <h3 class="_createTitle">
+                        <span
+                        class="_titleUpload">上传广告创意</span><span class="_titleChoose none"><a
+                        href="javascript:;" class="updata-back">&lt;返回</a>&nbsp;<span
+                        class="_extensionname none">创意库</span></span><span class="tips-normal tit-tips _certWrap"
+                                                                           ><i class="icon ico-tips"><i></i></i>若广告图片使用了明星肖像，并从未上传过相应证明资质，请<a
+                        href="../tool/portraits?edit" target="_blank">点此上传</a></span></h3>
+                    <ul class="updata-sucai _creativeWrap"></ul>
+                    <div class="updata-sucai-imgmore clearfix updata-sucai-imgmore-linkout _creativeCarousel none">
+                        <div class="sucai-imgmore-area _creativesContainer"></div>
+                    </div>
+                    <div class="updata newupdata none _dynamicCreativeWrap"></div>
+                    <div class="_materialTool"></div>
+                </div>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div id="ad-creative-demo" class="none">
+        <li class="sucai-list sucai-list-picheight" data-sortid="0" id="cabinet_2_0">
+            <div class="sucai-list-inner">
+                <div class="close _removeCabinet">关闭</div>
+                <div class="sucai-area" id="tname-cabinet_2_0ItemsWrap"><p
+                        class="sucai-edit _tnameLabel"><span
+                        class="_tnameContent">160×210图文创意1</span><span class="_tnameEdit"><i
+                        class="icon ico-edit"><i></i></i></span><span class="sucaiStatus"></span></p>
+                                    <span class="prompt _tnameTextarea none"><textarea placeholder="创意名称"
+                                                                                       id="tname-cabinet_2_0"
+                                                                                       name="tname"
+                                                                                       data-handler="counter"
+                                                                                       data-min="1" data-max="40">160×210图文创意1</textarea><input
+                                            type="hidden" name="tid" value=""><span id="tname-cabinet_2_0CounterWrap"
+                                                                                    class="somets c-tx3"><strong
+                                            id="tname-cabinet_2_0CounterWrapCurrentLength">12</strong>/<span
+                                            id="tname-cabinet_2_0MaxLength">40</span></span><span
+                                            class="tips-normal _errtips"
+                                            style="top: 50.3333px; left: 0px; display: none;"><i
+                                            class="icon ico-warning"><i></i></i>请检查文字个数</span></span></div>
+                <div class="sucai-area sucai-img _imgwrap_image_url"
+                     id="image_url-cabinet_2_0ItemsWrap">
+                    <div class="prompt">
+                        <div class="sucai-img-container"><img
+                                src="http://i.gtimg.cn/open_proj/img/gdt-toufang/img218.png"></div>
+                        <div class="sucai-img-standard"><p class="standard-size"><span class="c-red">160px</span>×<span
+                                class="c-red">210px</span></p>
+                            <p class="format-tips c-tx3">(40KB以内的JPG、PNG图片)</p>
+                            <form id="delivery_create_att_form0" class="delivery_create_att_form"
+                                  method="POST" enctype="multipart/form-data"><label
+                                    class="btn-upload input-file-sizeimg" for="img-cabinet_2_0"
+                                    title="可以按住CTRL键在对话框中点选不超过20张图片，不符合当前规格的图片不能上传，上传的所有图片都将保存在创意库中“本地上传”标签下。">图片上传</label><input
+                                    type="file" id="img-cabinet_2_0" name="file" class="_upload"
+                                    data-id="cabinet_2_0" accept="image/*" multiple=""><input
+                                    type="hidden" id="image_url-cabinet_2_0" name="image_url"
+                                    value=""><a href="javascript:;" class="btn-upload _btnChoose none"
+                                                title="使用创意库中的图片。">创意库</a></form>
+                        </div>
+                    </div>
+                </div>
+                <div class="sucai-area sucai-wenan" id="title-cabinet_2_0ItemsWrap"><span
+                        class="prompt"><textarea id="title-cabinet_2_0" name="title" placeholder="广告文案"
+                                                 data-handler="counter" data-min="0"
+                                                 data-max="18"></textarea><span
+                        id="title-cabinet_2_0CounterWrap" class="somets c-tx3"><strong
+                        id="title-cabinet_2_0CounterWrapCurrentLength">0</strong>/<span
+                        id="title-cabinet_2_0MaxLength">18</span></span><span
+                        class="tips-normal _errtips"
+                        style="top: 50.3333px; left: 0px; display: none;"><i class="icon ico-warning"><i></i></i>请检查输入文字在18个以内</span></span>
+                </div>
+            </div>
+        </li>
+        <li class="sucai-list sucai-list-height" data-sortid="0" id="cabinet_71_0">
+            <div class="sucai-list-inner">
+                <div class="close _removeCabinet">关闭</div>
+                <div class="sucai-area" id="tname-cabinet_71_0ItemsWrap"><p
+                        class="sucai-edit _tnameLabel"><span class="_tnameContent">文字链创意1</span><span
+                        class="_tnameEdit"><i class="icon ico-edit"><i></i></i></span><span
+                        class="sucaiStatus"></span></p><span
+                        class="prompt _tnameTextarea none"><textarea placeholder="创意名称"
+                                                                     id="tname-cabinet_71_0"
+                                                                     name="tname" data-handler="counter"
+                                                                     data-min="1"
+                                                                     data-max="40">文字链创意1</textarea><input
+                        type="hidden" name="tid" value=""><span id="tname-cabinet_71_0CounterWrap"
+                                                                class="somets c-tx3"><strong
+                        id="tname-cabinet_71_0CounterWrapCurrentLength">6</strong>/<span
+                        id="tname-cabinet_71_0MaxLength">40</span></span></span></div>
+                <div class="sucai-area sucai-wenan" id="title-cabinet_71_0ItemsWrap"><span
+                        class="prompt"><textarea id="title-cabinet_71_0" name="title" placeholder="广告文案"
+                                                 data-handler="counter" data-min="0"
+                                                 data-max="15"></textarea><span
+                        id="title-cabinet_71_0CounterWrap" class="somets c-tx3"><strong
+                        id="title-cabinet_71_0CounterWrapCurrentLength" class="">0</strong>/<span
+                        id="title-cabinet_71_0MaxLength">15</span></span><span
+                        class="tips-normal _errtips"
+                        style="top: 50.3333px; left: 0px; display: none;"><i class="icon ico-warning"><i></i></i>请检查输入文字在15个以内</span></span>
+                </div>
+                <div class="sucai-area sucai-miaoshu" id="desc-cabinet_71_0ItemsWrap"
+                     style="display:none;"><span class="prompt"><textarea id="desc-cabinet_71_0"
+                                                                          name="desc" placeholder="广告描述"
+                                                                          data-handler="counter"
+                                                                          data-min="0"
+                                                                          data-max="15"></textarea><span
+                        id="desc-cabinet_71_0CounterWrap" class="somets c-tx3"><strong
+                        id="desc-cabinet_71_0CounterWrapCurrentLength" class="">0</strong>/<span
+                        id="desc-cabinet_71_0MaxLength">15</span></span><span
+                        class="tips-normal _errtips" style="top:94.33334px;left:0px"><i
+                        class="icon ico-warning"><i></i></i>请检查输入文字在15个以内</span></span></div>
+                <div class="sucai-area sucai-hudong sucai-guanzhu"
+                     id="customer_define_invoke_url-cabinet_71_0ItemsWrap"><input
+                        name="hascustomer_define_invoke_url" value="1" type="checkbox" class="checkbox"
+                        id="hascustomer_define_invoke_url-cabinet_71_0"
+                        data-relateid="customer_define_invoke_url-cabinet_71_0"> <label
+                        for="hascustomer_define_invoke_url-cabinet_71_0">使用应用直达<i class="icon ico-help"
+                                                                                  rel="order.customer_define_invoke_url"><i></i></i></label>
+                    <input type="text" placeholder="输入直达页地址" class="text none"
+                           name="customer_define_invoke_url"
+                           id="customer_define_invoke_url-cabinet_71_0">
+                    <div class="prompt"><span class="tips-normal _errtips"
+                                              style="top:14.33334px;left:-124px"><i
+                            class="icon ico-warning"><i></i></i>请输入正确的网址</span></div>
+                </div>
+            </div>
+        </li>
+        <li class="sucai-list sucai-list-add _newCabinetWrap">
+            <div class="sucai-list-inner"><a href="javascript:;" class="_newCabinet"><span
+                    class="add-sym">+</span><span class="add-wd">新增创意<i class="icon ico-help"
+                                                                        rel="order.addcreative"
+                                                                        onclick="event.stopPropagation();"><i></i></i></span></a>
+            </div>
+        </li>
+</div>
+<div class="gdt-mask" id="build-gdt-mask"></div>
+<script src="js/jedate.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.form.js"></script>
+<script src="js/grid.locale-cn.js"></script>
+<script src="js/jquery.jqGrid.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/delivery_creat.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+#plan-nofixed{
+    display: block
+}
+#plan-barfixed{
+    margin-bottom: 0px;
+    position: relative;
+    width: auto;
+    top: 0px;
+}
+#_select_operation_status{
+    display: none;
+}
+#_select_operation_status_chosen{
+    width: 106px;
+}
