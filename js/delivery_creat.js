@@ -4,11 +4,12 @@
 var buildAdStep = {};
 buildAdStep.config = {
     "sortId":null,
-    "creativeNum":null
+    "creativeNum":null,
+    "preViewData":{}
 };
 buildAdStep.method = {};
 var methodFunction = buildAdStep.method;
-methodFunction.creatAdPlan = function(showWhich,data){
+methodFunction.creatInnerAd = function(showWhich,data){
     var positionTitleTargetObj = $("#_content_crtsize2 .piclist .tips");
     var positionPicTargetObj = $("#_creativesslides_2");
     var positionCreativeTarget = $("#_content_crtsize2 .updata-sucai");
@@ -30,30 +31,136 @@ methodFunction.creatAdPlan = function(showWhich,data){
 };
 methodFunction.editAdCreative = function(){
     var targetObjBox = $("#_content_crtsize2 .updata-sucai [id^=cabinet]");
+
     targetObjBox.each(function(){
-        $(this).attr({"editRight":false});
-        console.log(typeof $(this).attr("editRight"));
-        $(this).find("._tnameEdit").unbind("click").bind("click",function(e){
+        $(this).hover(
+            function(){
+            var editObj = $(this);
+            editObj.addClass("hover");
+            editObj.find("._removeCabinet").unbind("click").bind("click",function(){
+                var creativeNum = $("#_content_crtsize2 .updata-sucai [id^=cabinet]").length;
+                var deleteOnOff = creativeNum>1?true:false;
+                var dialogConfig = {};
+                if(deleteOnOff){
+                    dialogConfig = {
+                        "element":$("#qz_dialog_instance_qzDialog5"),
+                        "dragOnOff":true,
+                        "okFn":function(){
+                            editObj.remove();
+                            var residueCreativeAd = $("#_content_crtsize2 .updata-sucai [id^=cabinet]").length;
+                            buildAdStep.config.creativeNum =residueCreativeAd;
+                        },
+                        "closeFn":function(){
+                            return false;
+                        }
+                    };
+                    methodFunction.showDialog(dialogConfig);
+                }else{
+                    dialogConfig = {
+                        "element":$("#q_Msgbox"),
+                        "dragOnOff":false
+                    };
+                    methodFunction.showDialog(dialogConfig);
+                }
+            });
+        },
+            function(){
+            $(this).removeClass("hover");
+        }).find("._tnameEdit").unbind("click").bind("click",function(e){
             $(this).parent().addClass("none");
             $(this).parent().next().removeClass("none");
             e.stopPropagation();
         });
+        $("[data-id='"+$(this).attr("id")+"']").off("change").bind("change",function(){
+            var postImgObj = $(this);
+            var postImgLi = $("#"+$(this).attr("data-id"));
+            var dialogConfig0 = {
+                "element":$("#qz_dialog_instance_qzDialog11"),
+                "dragOnOff":true
+            };
+            methodFunction.showDialog(dialogConfig0);
+            var ajaxConfig = {
+                "postData":methodFunction.postData("img"),
+                "port":"deliveryCreativeAction!uploadThumbnail",
+                "mode":"form",
+                "formObj":postImgObj,
+                "success":function(data){
+                    console.log(data);
+                    if(data.upload_status){
+                        $("#qz_dialog_instance_qzDialog11").addClass("none");
+                        $("#build-gdt-mask").hide();
+                        var dialogConfig1 = {
+                            "element":$("#updata-success"),
+                            "dragOnOff":true,
+                            "okFn":function(){
+                                postImgLi.find(".sucai-wenan").prev().before($("#ad-img-creative-demo .sucai-area").clone()).remove();
+                                var sortId = postImgLi.attr("data-sortId");
+                                var returnImgSrc = data.img_url.replace("image/img04", "http://img04.allinmd.cn")+"?tempid="+Date.parse(new Date());
+                                var creativeData = {
+                                    "creativeId":data.id,
+                                    "imgSrc":returnImgSrc
+                                };
+                                /*将数据存到或者更新到预览数据的json内*/
+                                for(var pushNum = 0;pushNum<buildAdStep.config.preViewData.length;pushNum++){
+                                    var hasInSrc = buildAdStep.config.preViewData[pushNum].img_url.substring(0,buildAdStep.config.preViewData[pushNum].img_url.indexOf("?"));
+                                    if(hasInSrc==data.img_url){
+                                        buildAdStep.config.preViewData[pushNum].img_url = returnImgSrc;
+                                        break;
+                                    }else{
+                                        if(pushNum==buildAdStep.config.preViewData.length-1){
+                                            buildAdStep.config.preViewData.push(returnImgSrc);
+                                            break;
+                                        }
+                                    }
+                                }
+                                if(buildAdStep.config.preViewData.length==0){
+                                    buildAdStep.config.preViewData.push(returnImgSrc);
+                                }
+                                methodFunction.creatAdId(postImgLi,sortId,"1",creativeData);
+                            }
+                        };
+                        methodFunction.showDialog(dialogConfig1);
+
+                    }else{
+                        $("#qz_dialog_instance_qzDialog11").addClass("none");
+                        $("#build-gdt-mask").hide();
+                        var dialogConfig2 = {
+                            "element":$("#qz_dialog_instance_qzDialog3"),
+                            "dragOnOff":true
+                        };
+                        methodFunction.showDialog(dialogConfig2);
+                    }
+
+                }
+            };
+            methodFunction.ajax(ajaxConfig);
+        });
         $(".sucai-wenan textarea").each(function(){
-            $(this).unbind("click").bind("click",function(e){
+            $(this).unbind("click").bind("click input  propertychange",function(e){
+                var maxLen=parseInt($(this).parent().find(".somets span").html())+1;
+                var num = $(this).val().length;
+                var checkOnOff = num<maxLen&&num>0;
+                if(checkOnOff){
+                    $(this).parent().find(".somets strong").html(num).css({"color":"#909090"});
+                    $(this).parent().find("._errtips").hide();
+                }else{
+                    $(this).parent().find(".somets strong").html(num).css({"color":"#e33244"});
+                    $(this).parent().find("._errtips").show();
+                }
                 e.stopPropagation();
             });
         });
         $("._tnameTextarea textarea").each(function(e){
             $(this).bind("input  propertychange",function(){
                 var num = $(this).val().length;
-                if(num<41){
+                var maxLen=parseInt($(this).parent().find(".somets span").html())+1;
+                var checkNameOnOff = num<maxLen&&num>0;
+                if(checkNameOnOff){
                     $(this).parent().find(".somets strong").html(num).css({"color":"#909090"});
                     $(this).parent().find("._errtips").hide();
-                    $(this).attr({"editRight":false});
                 }else{
                     $(this).parent().find(".somets strong").html(num).css({"color":"#e33244"});
                     $(this).parent().find("._errtips").show();
-                    $(this).attr({"editRight":true});
                 }
             });
             $(this).unbind("click").bind("click",function(e){
@@ -63,24 +170,93 @@ methodFunction.editAdCreative = function(){
 
             });
         });
+        $(".sucai-guanzhu .checkbox").each(function(){
+            /*这里存在一个bug点击第二个，编辑第一个*/
+            $(this).unbind("click").bind("click",function(){
+                var onOff = $(this).is(':checked');
+                if(onOff){
+                    $(this).next().addClass("none");
+                    $(this).siblings(".text").removeClass("none").bind("input propertychange",function(){
+                        var urlStr = $(this).val();
+                        var reg = /^((https?|ftp|news):\/\/)?([a-z]([a-z0-9\-]*[\.。])+([a-z]{2}|aero|arpa|biz|com|coop|edu|gov|info|int|jobs|mil|museum|name|nato|net|org|pro|travel)|(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]))(\/[a-z0-9_\-\.~]+)*(\/([a-z0-9_\-\.]*)(\?[a-z0-9+_\-\.%=&]*)?)?(#[a-z][a-z0-9_]*)?$/;
+                        var urlOnOff = reg.test(urlStr);
+                        if(urlOnOff){
+                            $(this).next().find("._errtips").hide();
+                        }else{
+                            $(this).next().find("._errtips").show();
+                        }
+                    });
+
+                }else{
+                    $(this).next().removeClass("none");
+                    $(this).siblings(".text").addClass("none");
+                }
+
+            });
+
+        });
+
+    });
+    $(document).unbind("click").bind("click",function(){
+        targetObjBox.each(function(){
+            var stroeName = $(this).find("._tnameTextarea textarea").val();
+            var nameEditOnOff = stroeName.length<41&&stroeName.length>0;
+            if(nameEditOnOff){
+                $(this).find("._tnameEdit").parent().removeClass("none").next().addClass("none").prev().find("._tnameContent").html(stroeName);
+            }else{
+                return false;
+            }
+        });
     });
 };
-methodFunction.creatAdId = function(element,sortId,creativeId){
+methodFunction.creatAdId = function(element,sortId,type,data){
+    switch (type) {
+        case "1":
+            if (data) {
+                element.attr({"creativeId": data.creativeId}).find("._removeCabinet").next().attr({"id": "tname-cabinet_2_" + sortId + "ItemsWrap"}).next().attr({"id": "image_url-cabinet_2_" + sortId + "ItemsWrap"}).find(".sucai-img-container img").attr({"src": data.imgSrc}).parent().parent().next().attr({"value": data.imgSrc}).parent().find(".delivery_create_att_form").attr({"id": "delivery_create_att_form" + sortId + ""}).find(".input-file-sizeimg").attr({"for": "img-cabinet_2_" + sortId}).next().attr({
+                    "id": "img-cabinet_2_" + sortId,
+                    "data-id": "cabinet_2_" + sortId
+                }).next().attr({"id": "image_url-cabinet_2_" + sortId});
+            } else {
+                element.find("._removeCabinet").next().attr({"id": "tname-cabinet_2_" + sortId + "ItemsWrap"}).next().attr({"id": "image_url-cabinet_2_" + sortId + "ItemsWrap"}).find(".delivery_create_att_form").attr({"id": "delivery_create_att_form" + sortId + ""}).find(".input-file-sizeimg").attr({"for": "img-cabinet_2_" + sortId}).next().attr({
+                    "id": "img-cabinet_2_" + sortId,
+                    "data-id": "cabinet_2_" + sortId
+                }).next().attr({"id": "image_url-cabinet_2_" + sortId});
+            }
+            element.find(".sucai-area").eq(0).find("._tnameTextarea textarea").attr({"id": "tname-cabinet_2_" + sortId}).next().next().attr({"id": "tname-cabinet_2_" + sortId + "CounterWrap"}).find("strong").attr({"id": "tname-cabinet_2_" + sortId + "CounterWrapCurrentLength"}).next().attr({"id": "tname-cabinet_2_" + sortId + "MaxLength"});
 
+            element.find(".sucai-wenan").attr({"id": "title-cabinet_2_" + sortId + "ItemsWrap"}).find(".prompt textarea").attr({"id": "title-cabinet_2_" + sortId}).next().attr({"id": "title-cabinet_2_" + sortId + "CounterWrap"}).find("strong").attr({"id": "title-cabinet_2_" + sortId + "CounterWrapCurrentLength"}).next().attr({"id": "title-cabinet_2_" + sortId + "MaxLength"});
+            break;
+        case "2":
+            if (data) {
+                element.attr({"creativeId": data.creativeId});
+            }
+            element.find(".sucai-area").eq(0).attr({"id": "tname-cabinet_71_" + sortId + "ItemsWrap"}).find("._tnameTextarea textarea").attr({"id": "tname-cabinet_71_" + sortId + ""}).next().next().attr({"id": ".tname-cabinet_71_0CounterWrap"}).find("strong").attr({"id": "tname-cabinet_71_" + sortId + "CounterWrapCurrentLength"}).next().attr({"id": "tname-cabinet_71_" + sortId + "MaxLength"});
+            element.find(".sucai-area").eq(1).attr({"id": "title-cabinet_71_" + sortId + "ItemsWrap"}).find("textarea").attr({"id": "title-cabinet_71_" + sortId}).next().attr({"id": "title-cabinet_71_" + sortId + "CounterWrap"}).find("strong").attr({"id": "title-cabinet_71_" + sortId + "CounterWrapCurrentLength"}).next().attr({"id": "title-cabinet_71_" + sortId + "MaxLength"});
+            element.find(".sucai-area").eq(2).attr({"id": "desc-cabinet_71_" + sortId + "ItemsWrap"}).find("textarea").attr({"id": "desc-cabinet_71_" + sortId}).next().attr({"id": "desc-cabinet_71_" + sortId + "CounterWrap"}).find("strong").attr({"id": "desc-cabinet_71_" + sortId + "CounterWrapCurrentLength"}).next().attr({"id": "desc-cabinet_71_" + sortId + "MaxLength"});
+            element.find(".sucai-area").eq(3).attr({"id": "customer_define_invoke_url-cabinet_71_" + sortId + "ItemsWrap"}).find(".checkbox").attr({
+                "id": "hascustomer_define_invoke_url-cabinet_71_" + sortId,
+                "data-relateid": "customer_define_invoke_url-cabinet_71_" + sortId
+            }).next().attr({"for": "hascustomer_define_invoke_url-cabinet_71_" + sortId}).next().attr({"id": "customer_define_invoke_url-cabinet_71_" + sortId});
+            break;
+        default:
+            break;
+    }
 };
 methodFunction.creatAdCreative = function(creatWhich){
     var creatAdTargetObj = $("#_content_crtsize2 .sucai-list-add");
     creatAdTargetObj.unbind("click").bind("click",function(){
         var liDemoBox = $("#ad-creative-demo li");
         if(buildAdStep.config.creativeNum<5){
-
+            var creatLi = null;
             switch (creatWhich){
                 case "1":
                     $(this).before(liDemoBox.eq(0).clone().attr({
                         "data-sortId":buildAdStep.config.sortId,
                         "id":"cabinet_2_"+buildAdStep.config.sortId
                     }));
-                    methodFunction.creatAdId($("#cabinet_2_"+buildAdStep.config.sortId,buildAdStep.config.sortId));
+                    creatLi = $("#cabinet_2_"+buildAdStep.config.sortId);
+                    methodFunction.creatAdId(creatLi,buildAdStep.config.sortId,creatWhich);
                     buildAdStep.config.sortId++;
                     methodFunction.editAdCreative();
                     break;
@@ -89,6 +265,8 @@ methodFunction.creatAdCreative = function(creatWhich){
                         "data-sortId":buildAdStep.config.sortId,
                         "id":"cabinet_71_"+buildAdStep.config.sortId
                     }));
+                    creatLi = $("#cabinet_71_"+buildAdStep.config.sortId);
+                    methodFunction.creatAdId(creatLi,buildAdStep.config.sortId,creatWhich);
                     buildAdStep.config.sortId++;
                     methodFunction.editAdCreative();
                     break;
@@ -195,12 +373,12 @@ methodFunction.simulateSelect = function(){
         creativeObj.addClass("none");
     });
 };
-methodFunction.postData = function(mode){
+methodFunction.postData = function(mode,postObj){
     var postData = {};
     var preDataBox = null;
     postData.queryJson = {};
     switch (mode){
-        case "creativePlan":
+        case "deliveryPlan":
             var creativePlanData = null;
             var deliveryAdTimeType = null;
             var deliveryAdStartTime = null;
@@ -215,13 +393,13 @@ methodFunction.postData = function(mode){
                 deliveryAdType = 1;
             }
             if($("#alltime0").attr("checked")){
+                deliveryAdTimeType = 2;
+                deliveryAdStartTime = $("#stime").val()+":00";
+                deliveryAdEndTime = $("#etime").val()+":00";
+            }else{
                 deliveryAdTimeType = 1;
                 deliveryAdStartTime = "";
                 deliveryAdEndTime = "";
-            }else{
-                deliveryAdTimeType = 2;
-                deliveryAdStartTime = $("#stime").val();
-                deliveryAdEndTime = $("#etime").val();
             }
             if(adPlanResultObj.attr("isPlanId")){
                 id = adPlanResultObj.attr("isPlanId");
@@ -230,7 +408,7 @@ methodFunction.postData = function(mode){
                 id = 0;
                 deliveryAdId=0;
             }
-              creativePlanData = {
+            creativePlanData = {
                   "deliveryAdStartTime":deliveryAdStartTime,
                   "deliveryAdEndTime":deliveryAdEndTime,
                   "deliveryAdTimeType":deliveryAdTimeType,
@@ -242,8 +420,65 @@ methodFunction.postData = function(mode){
                   "deliveryPlanId":adPlanResultObj.attr("selectPlan"),
                   "deliveryAdName":$("#ordername").val(),
                   "deliveryAdUrl":$("#orderlink").val(),
-                  "deliveryPublisher":"1"//则是发布者的id，也就是登录账号
-              }
+                  "deliveryPublisher":"1"//这是发布者的id，也就是登录账号
+              };
+            preDataBox = JSON.stringify(creativePlanData);
+            postData.queryJson = preDataBox;
+            break;
+        case "img":
+            var sendImgData = null;
+            if(postObj.attr("creativeId")){
+                sendImgData = {
+                    "id": parseInt(postObj.attr("creativeId")),
+                    "sortId": parseInt(postObj.attr("data-sortid")),
+                    "deliveryCreativeName": postObj.find("._tnameContent").html()
+                };
+            }else{
+                sendImgData = {
+                    "id": 0,
+                    "sortId": parseInt(postObj.attr("data-sortid")),
+                    "deliveryCreativeName": postObj.find("._tnameContent").html(),
+                    'deliveryAdId':""
+                };
+            }
+            preDataBox = JSON.stringify(sendImgData);
+            postData.queryJson = sendImgData;
+        default:
+            break;
+    }
+    return postData;
+};
+methodFunction.ajax = function(ajaxConfig){
+    var postData = ajaxConfig.postData;//需要提交给后台的参数
+    var port = ajaxConfig.port;//后台接口
+    var mode = ajaxConfig.mode;//数据交互的方式，form,ajax
+    var formObj = ajaxConfig.formObj;//form上传是。所对应的form表单
+    var successFn = ajaxConfig.success;//返回数据后的回调函数
+    if(mode=="form"){
+        formObj.ajaxSubmit({
+            url: port,
+            dataType: 'text',
+            data :postData,
+            type: "post",
+            clearForm: true,
+            success: function (data) {
+                if(successFn){
+                    successFn(data);
+                }
+            }
+        });
+    }else{
+        $.ajax({
+            type: "post",
+            url: port,
+            data: postData,
+            cache: false,
+            success: function(data) {
+                if(successFn){
+                    successFn(data);
+                }
+            }
+        });
     }
 };
 methodFunction.jqgridInit = function(){
@@ -362,7 +597,7 @@ methodFunction.jqgridInit = function(){
                 var thisRow = $("#"+rowid);
                 var showWhich = rowData["type"];
                 var data = {"positionList":[{"title":"个人中心左下角广告位","imgSrc":"http://imgcache.qq.com/qzonestyle/sns/gdt/create/images/ad/160x210_01x.jpg"},{"title":"应用中心首页及各分类页左下广告位","imgSrc":"http://imgcache.qq.com/qzonestyle/sns/gdt/create/images/ad/160x210_02x.jpg"},{"title":"空间_个人中心_左下 160*210悬挂","imgSrc":"http://qzonestyle.gtimg.cn/open_proj/img/displaybox/qzone_center_160x210x.jpg"},{"title":"应用中心首页及各分类页左下广告位","imgSrc":"http://imgcache.qq.com/qzonestyle/sns/gdt/create/images/ad/py160x210_01x.jpg"},{"title":"应用详情页左下广告位","imgSrc":"http://imgcache.qq.com/qzonestyle/sns/gdt/create/images/ad/py160x210_02x.jpg"}],"position":"您的广告将可能出现在以上示例广告位，但仅会出现在“QQ空间”投放平台"};
-                thisRow.after(methodFunction.creatAdPlan(showWhich,data));
+                thisRow.after(methodFunction.creatInnerAd(showWhich,data));
                 methodFunction.editAdCreative();
                 buildAdStep.config.sortId = 1;
                 buildAdStep.config.creativeNum = 1;
@@ -485,9 +720,16 @@ methodFunction.checkNextOnOff = function(stepNum){
 };
 methodFunction.oneStep = function(){
     alert("这是第一个下一步");
-    this.postData("creativePlan");
-    /*queryJson:{"deliveryAdStartTime":"3:00","deliveryAdEndTime":"20:00","deliveryAdTimeType":2,"deliveryAdId":"1476757106313","id":"616","deliveryAdType":2,"deliveryAdStartDate":"2016-10-18","deliveryAdEndDate":"2016-10-20","deliveryPlanId":"1476669723400","deliveryAdName":"而非","deliveryAdUrl":"www.baidu.com","deliveryPublisher":"1"}*/
-    console.log();
+    var ajaxConfig = {
+        "postData":methodFunction.postData("creativePlan"),
+        "port":"deliveryAdAction!save",
+        "mode":"ajax",
+        "success":function(data){
+            console.log(data);
+        }
+    };
+    console.log(methodFunction.postData("deliveryPlan"));
+    this.ajax(ajaxConfig);
     this.showBehavior();
     this.jqgridInit();
 };
@@ -537,25 +779,38 @@ methodFunction.changeIndex = function(){
         methodFunction.nowIndex(nowIndex);
     });
 };
-methodFunction.showDialog = function(ele,drag){
+methodFunction.showDialog = function(dialogConfig){
+    var drag = dialogConfig.dragOnOff;
+    var ele = dialogConfig.element;
+    var subFn = dialogConfig.okFn;
+    var norFn = dialogConfig.closeFn;
     if(drag){
         ele.draggable({ containment: "window" });
     }else{
-        ele.fadeIn().delay(2000).fadeOut();
+        ele.fadeIn().delay(1500).fadeOut();
         return false;
     }
     $("#build-gdt-mask").show();
     ele.removeClass("none");
 
     ele.find(".qz_dialog_btn_close").unbind("click").bind("click",function(){
+        if(norFn){
+            norFn();
+        }
        ele.addClass("none");
         $("#build-gdt-mask").hide();
     });
     ele.find(".qz_dialog_layer_nor").unbind("click").bind("click",function(){
+        if(norFn){
+            norFn();
+        }
         ele.addClass("none");
         $("#build-gdt-mask").hide();
     });
     ele.find(".qz_dialog_layer_sub").unbind("click").bind("click",function(){
+        if(subFn){
+            subFn();
+        }
         ele.addClass("none");
         $("#build-gdt-mask").hide();
     });
@@ -655,7 +910,11 @@ methodFunction.showBehavior = function(){
         });
     });
     targetObj.deliveryPlan.unbind("click").bind("click",function(){
-        methodFunction.showDialog($("#qz_dialog_instance_qzDialog1"),"drag");
+        var dialogConfig = {
+          "element":$("#qz_dialog_instance_qzDialog1"),
+            "dragOnOff":true
+        };
+        methodFunction.showDialog(dialogConfig);
     });
 };
 methodFunction.init = function(){
