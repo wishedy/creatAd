@@ -5,7 +5,7 @@ var buildAdStep = {};
 buildAdStep.config = {
     "sortId":null,
     "creativeNum":null,
-    "preViewData":{}
+    "preViewData":[]
 };
 buildAdStep.method = {};
 var methodFunction = buildAdStep.method;
@@ -46,6 +46,27 @@ methodFunction.editAdCreative = function(){
                         "element":$("#qz_dialog_instance_qzDialog5"),
                         "dragOnOff":true,
                         "okFn":function(){
+                            if(editObj.attr("creativeId")){
+                                /*当服务器存在该条数据时才删掉*/
+                                var ajaxConfig = {
+                                    "port":"deliveryCreativeAction!delAdCreativity",
+                                    "mode":"ajax",
+                                    "postData":methodFunction.postData("deleteCreativeAd",editObj),
+                                    "successFn":function(data){
+                                        console.log(data);
+                                    }
+                                };
+                                methodFunction.ajax(ajaxConfig);
+                                /*同时删掉本地预览数据*/
+                                for(var sortDele=0;sortDele<buildAdStep.config.preViewData.length;sortDele++){
+
+                                    if(buildAdStep.config.preViewData[sortDele].sortId==editObj.attr("data-sortId")){
+                                        buildAdStep.config.preViewData.splice(sortDele,1);
+                                        break;
+                                    }
+                                }
+                            }
+
                             editObj.remove();
                             var residueCreativeAd = $("#_content_crtsize2 .updata-sucai [id^=cabinet]").length;
                             buildAdStep.config.creativeNum =residueCreativeAd;
@@ -80,7 +101,7 @@ methodFunction.editAdCreative = function(){
             };
             methodFunction.showDialog(dialogConfig0);
             var ajaxConfig = {
-                "postData":methodFunction.postData("img"),
+                "postData":methodFunction.postData("img",postImgLi),
                 "port":"deliveryCreativeAction!uploadThumbnail",
                 "mode":"form",
                 "formObj":postImgObj,
@@ -98,11 +119,13 @@ methodFunction.editAdCreative = function(){
                                 var returnImgSrc = data.img_url.replace("image/img04", "http://img04.allinmd.cn")+"?tempid="+Date.parse(new Date());
                                 var creativeData = {
                                     "creativeId":data.id,
-                                    "imgSrc":returnImgSrc
+                                    "imgSrc":returnImgSrc,
+                                    "sortId":data.sortId
                                 };
                                 /*将数据存到或者更新到预览数据的json内*/
                                 for(var pushNum = 0;pushNum<buildAdStep.config.preViewData.length;pushNum++){
-                                    var hasInSrc = buildAdStep.config.preViewData[pushNum].img_url.substring(0,buildAdStep.config.preViewData[pushNum].img_url.indexOf("?"));
+                                    var returnPivPath = buildAdStep.config.preViewData[pushNum].img_url
+                                    var hasInSrc = returnPivPath.substring(0,returnPivPath.indexOf("?"));
                                     if(hasInSrc==data.img_url){
                                         buildAdStep.config.preViewData[pushNum].img_url = returnImgSrc;
                                         break;
@@ -442,7 +465,18 @@ methodFunction.postData = function(mode,postObj){
                 };
             }
             preDataBox = JSON.stringify(sendImgData);
-            postData.queryJson = sendImgData;
+            postData.queryJson = preDataBox;
+            break;
+        case "deleteCreativeAd":
+            var deleteData = null;
+            if(postObj.attr("creativeId")){
+                deleteData = {
+                    "deleId": parseInt(postObj.attr("creativeId"))
+                };
+            }
+            preDataBox = JSON.stringify(deleteData);
+            postData.queryJson = preDataBox;
+            break;
         default:
             break;
     }
@@ -700,7 +734,47 @@ methodFunction.jedateInit = function(){
     });
 };
 methodFunction.checkTwoStep = function(){
-
+    var checkTargetObj = $("#_content_crtsize2 .updata-sucai  [id^=cabinet]");
+    var  rightOnOff = false;
+    for(var checkNum = 0;checkNum<checkTargetObj.length;checkNum++){
+        var checkNameObj = checkTargetObj.eq(checkNum).find("._tnameTextarea textarea");
+        var checkWenAnObj = checkTargetObj.eq(checkNum).find(".sucai-wenan textarea");
+        var checkImgObj = checkTargetObj.eq(checkNum);
+        var nameJudge = parseInt(checkNameObj.parent().find(".somets span").html())+1;
+        var wenAnJudge =parseInt(checkWenAnObj.parent().find(".somets span").html())+1;
+        var nameErrorObj = checkNameObj.parent().find("._errtips");
+        var wenAnErrorObj = checkWenAnObj.parent().find("._errtips");
+        var nameRightOnOff = checkNameObj.html().length<nameJudge?true:false;
+        var wenAnOnOff = checkWenAnObj.html().length<wenAnJudge?true:false;
+        var imgOnOff = checkImgObj.attr("creativeId")?true:false;
+        if(nameRightOnOff){
+            nameErrorObj.hide();
+            rightOnOff = true;
+        }else{
+            nameErrorObj.show();
+            rightOnOff = false;
+        }
+        if(wenAnOnOff){
+            rightOnOff = true;
+            wenAnErrorObj.hide();
+        }else{
+            wenAnErrorObj.show();
+            rightOnOff = false;
+        }
+        if(!imgOnOff){
+            var dialogConfig = {
+                "dragOnOff":false,
+                "element":$("#q_Msgbox1")
+            };
+            rightOnOff = false;
+        }else{
+            rightOnOff = true;
+        }
+        if(!rightOnOff){
+            break;
+        }
+    }
+    return rightOnOff;
 };
 methodFunction.checkThreeStep = function(){
 
@@ -710,7 +784,9 @@ methodFunction.checkNextOnOff = function(stepNum){
         case 0:
             return methodFunction.checkOneStep();
         case 1:
-            return true;
+            console.log(methodFunction.checkTwoStep());
+            return methodFunction.checkTwoStep();
+            //return true;
         case 2:
             return true;
         case 3:
